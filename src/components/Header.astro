@@ -4,52 +4,102 @@ import HeaderLink from './HeaderLink.astro';
 ---
 
 <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
+	<div class="header-inner">
+		<a class="logo" href="/">
+			<span class="logo-mark">PM</span>
+			<span class="logo-text">{SITE_TITLE}</span>
+		</a>
+		<nav class="nav-links">
 			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/blog">Guides</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
-			<HeaderLink href="/how-we-make-money">How we make money</HeaderLink>
-		</div>
-	</nav>
+			<HeaderLink href="/how-we-make-money">How we earn</HeaderLink>
+		</nav>
+	</div>
 </header>
+
 <style>
 	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		background: rgba(255, 255, 255, 0.95);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+		border-bottom: 1px solid rgb(var(--gray-light));
+		box-shadow: 0 1px 4px rgba(var(--black), 4%);
 	}
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
+	.header-inner {
+		width: 960px;
+		max-width: calc(100% - 2em);
+		margin: 0 auto;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		height: 60px;
 	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
+
+	.logo {
+		display: flex;
+		align-items: center;
+		gap: 0.6em;
 		text-decoration: none;
+		color: rgb(var(--black));
+		font-weight: 700;
+		transition: opacity var(--transition);
 	}
-	nav a.active {
+
+	.logo:hover { opacity: 0.8; color: rgb(var(--black)); }
+
+	.logo-mark {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		background: var(--accent);
+		color: white;
+		font-size: 0.75em;
+		font-weight: 700;
+		border-radius: 8px;
+		letter-spacing: 0.02em;
+		flex-shrink: 0;
+	}
+
+	.logo-text {
+		font-size: 0.95em;
+	}
+
+	.nav-links {
+		display: flex;
+		align-items: center;
+		gap: 0.25em;
+	}
+
+	.nav-links :global(a) {
+		padding: 0.45em 0.85em;
+		color: rgb(var(--gray-dark));
+		border-bottom: none;
 		text-decoration: none;
-		border-bottom-color: var(--accent);
+		font-size: 0.92em;
+		font-weight: 500;
+		border-radius: 8px;
+		transition: background var(--transition), color var(--transition);
 	}
-	@media (max-width: 720px) {
-		.internal-links {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0;
+
+	.nav-links :global(a:hover),
+	.nav-links :global(a.active) {
+		background: var(--accent-light);
+		color: var(--accent);
+	}
+
+	@media (max-width: 600px) {
+		.logo-text { display: none; }
+
+		.nav-links :global(a) {
+			padding: 0.4em 0.6em;
+			font-size: 0.85em;
 		}
 	}
 </style>

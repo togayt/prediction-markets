@@ -13,181 +13,459 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<section class="hero">
+			<section class="hero animate-fade-up">
+				<span class="hero-tag">Free guide, no sign-up needed</span>
 				<h1>Find the right prediction market for you</h1>
 				<p class="hero-subheadline">
-					Plain-English guides and honest comparisons of Kalshi, Polymarket, and Crypto.com — so you can
-					pick the right platform and start in minutes.
+					Plain-English guides and honest comparisons of Kalshi, Polymarket, and Crypto.com so you
+					can pick the right platform and start in minutes.
 				</p>
-				<a class="button-primary" href="#compare">Compare platforms</a>
+				<div class="hero-actions">
+					<a class="button-primary" href="#compare">Compare platforms</a>
+					<a class="button-ghost" href="/blog/what-is-a-prediction-market-beginners-guide">What is a prediction market?</a>
+				</div>
 			</section>
 
-			<section class="intro">
-				<h2>New to prediction markets?</h2>
-				<p>
-					A prediction market is a marketplace where people trade on the outcome of real-world events —
-					elections, sports, economics, and more. Instead of a single expert’s forecast, prices on each
-					outcome reflect the crowd’s estimate of how likely it is to happen.
-				</p>
-				<p>
-					If you are new, start with our beginner’s guide for a plain-English walkthrough of how these
-					platforms work and what to check before you sign up.
-				</p>
-				<p>
-					<a href="/blog/what-is-a-prediction-market-beginners-guide/">Read the full beginner's guide →</a>
-				</p>
+			<section class="intro reveal">
+				<div class="intro-inner">
+					<h2>New to prediction markets?</h2>
+					<p>
+						A prediction market is a marketplace where people trade on the outcome of real-world events:
+						elections, sports, economics, and more. Instead of a single expert's forecast, prices on each
+						outcome reflect the crowd's estimate of how likely it is to happen.
+					</p>
+					<p>
+						If you are new, start with our beginner's guide for a plain-English walkthrough of how these
+						platforms work and what to check before you sign up.
+					</p>
+					<a href="/blog/what-is-a-prediction-market-beginners-guide">Read the beginner's guide &rarr;</a>
+				</div>
 			</section>
 
 			<section id="compare" class="compare">
-				<h2>Compare the top platforms</h2>
+				<div class="compare-header reveal">
+					<h2>Compare the top platforms</h2>
+					<p class="compare-subtitle">Three leading platforms, each suited to a different type of trader.</p>
+				</div>
 				<div class="platform-grid">
-					<article class="platform-card">
-						<h3>Kalshi</h3>
-						<p><strong>Best for:</strong> US users who want a regulated, mainstream platform.</p>
-						<a class="button-secondary" href="/blog/kalshi-review">Read our review →</a>
-						<a class="button-platform" href="https://kalshi.com" target="_blank" rel="noopener">Visit Kalshi</a>
+					<article class="platform-card reveal reveal-delay-1">
+						<div class="card-top">
+							<div class="platform-badge kalshi-badge">US Regulated</div>
+							<h3>Kalshi</h3>
+							<p class="best-for"><span class="label">Best for</span> US users who want a regulated, mainstream platform.</p>
+						</div>
+						<ul class="card-features">
+							<li>CFTC regulated exchange</li>
+							<li>USD deposits via bank or card</li>
+							<li>Politics, economics, sports markets</li>
+						</ul>
+						<div class="card-actions">
+							<a class="button-secondary" href="/blog/kalshi-review">Read our review</a>
+							<a class="button-platform" href="https://kalshi.com" target="_blank" rel="noopener">Visit Kalshi &rarr;</a>
+						</div>
 					</article>
-					<article class="platform-card">
-						<h3>Polymarket</h3>
-						<p>
-							<strong>Best for:</strong> crypto-comfortable users outside the US who want the largest,
-							best-known markets.
-						</p>
-						<a class="button-secondary" href="/blog/polymarket-review">Read our review →</a>
-						<a class="button-platform" href="https://polymarket.com" target="_blank" rel="noopener">Visit Polymarket</a>
+
+					<article class="platform-card reveal reveal-delay-2">
+						<div class="card-top">
+							<div class="platform-badge polymarket-badge">Largest Volume</div>
+							<h3>Polymarket</h3>
+							<p class="best-for"><span class="label">Best for</span> crypto-comfortable users outside the US who want the largest, best-known markets.</p>
+						</div>
+						<ul class="card-features">
+							<li>Highest liquidity globally</li>
+							<li>USDC on Polygon blockchain</li>
+							<li>Wide range of global markets</li>
+						</ul>
+						<div class="card-actions">
+							<a class="button-secondary" href="/blog/polymarket-review">Read our review</a>
+							<a class="button-platform" href="https://polymarket.com" target="_blank" rel="noopener">Visit Polymarket &rarr;</a>
+						</div>
 					</article>
-					<article class="platform-card">
-						<h3>Crypto.com</h3>
-						<p>
-							<strong>Best for:</strong> people already in crypto who want prediction markets alongside an
-							exchange.
-						</p>
-						<a class="button-secondary" href="/blog/crypto-com-predict-review">Read our review →</a>
-						<a class="button-platform" href="https://crypto.com/predict" target="_blank" rel="noopener">Visit Crypto.com</a>
+
+					<article class="platform-card reveal reveal-delay-3">
+						<div class="card-top">
+							<div class="platform-badge crypto-badge">Crypto Native</div>
+							<h3>Crypto.com</h3>
+							<p class="best-for"><span class="label">Best for</span> people already in crypto who want prediction markets alongside an exchange.</p>
+						</div>
+						<ul class="card-features">
+							<li>Built into Crypto.com ecosystem</li>
+							<li>Crypto and sports markets</li>
+							<li>CRO holder benefits</li>
+						</ul>
+						<div class="card-actions">
+							<a class="button-secondary" href="/blog/crypto-com-predict-review">Read our review</a>
+							<a class="button-platform" href="https://crypto.com/predict" target="_blank" rel="noopener">Visit Crypto.com &rarr;</a>
+						</div>
 					</article>
 				</div>
 				<p class="compare-note">
-					Availability and rules vary by country and age — always check before signing up.
+					Availability and rules vary by country and age. Always check before signing up.
 				</p>
 			</section>
 
-			<p class="affiliate-disclosure">
-				We may earn a commission when you sign up through links on this site, at no extra cost to you. This
-				keeps our guides free.
+			<section class="quick-compare reveal">
+				<h2>Quick comparison</h2>
+				<div class="table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>Platform</th>
+								<th>US available</th>
+								<th>Deposit method</th>
+								<th>Regulated</th>
+								<th>Best market type</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>Kalshi</strong></td>
+								<td class="check">Yes</td>
+								<td>USD (bank / card)</td>
+								<td class="check">CFTC</td>
+								<td>Politics, economics</td>
+							</tr>
+							<tr>
+								<td><strong>Polymarket</strong></td>
+								<td class="cross">No</td>
+								<td>USDC (crypto)</td>
+								<td class="cross">No</td>
+								<td>Global events</td>
+							</tr>
+							<tr>
+								<td><strong>Crypto.com</strong></td>
+								<td class="neutral">Limited</td>
+								<td>Crypto</td>
+								<td class="neutral">Varies</td>
+								<td>Crypto, sports</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<p class="affiliate-disclosure reveal">
+				We may earn a commission when you sign up through links on this site, at no extra cost to you.
+				This keeps our guides free. <a href="/how-we-make-money">Learn how we make money.</a>
 			</p>
 		</main>
 		<Footer />
+
+		<script>
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('visible');
+						}
+					});
+				},
+				{ threshold: 0.12 }
+			);
+			document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+		</script>
 	</body>
 </html>
 
 <style>
+	/* Hero */
 	.hero {
-		margin-bottom: 3em;
+		padding: 2em 0 3em;
+		text-align: center;
+	}
+
+	.hero-tag {
+		display: inline-block;
+		background: var(--accent-light);
+		color: var(--accent);
+		font-size: 0.8em;
+		font-weight: 700;
+		padding: 0.35em 0.9em;
+		border-radius: 100px;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		margin-bottom: 1em;
+	}
+
+	.hero h1 {
+		font-size: clamp(2em, 5vw, 3.2em);
+		margin-bottom: 0.4em;
+		line-height: 1.15;
 	}
 
 	.hero-subheadline {
-		font-size: 1.15em;
+		font-size: 1.1em;
 		color: rgb(var(--gray));
-		max-width: 42em;
+		max-width: 38em;
+		margin: 0 auto 1.75em;
+		line-height: 1.6;
+	}
+
+	.hero-actions {
+		display: flex;
+		gap: 1em;
+		justify-content: center;
+		flex-wrap: wrap;
 	}
 
 	.button-primary {
 		display: inline-block;
-		margin-top: 0.5em;
-		padding: 0.75em 1.5em;
+		padding: 0.75em 1.75em;
 		background: var(--accent);
 		color: white;
 		text-decoration: none;
-		border-radius: 8px;
+		border-radius: 100px;
 		font-weight: 700;
+		font-size: 1em;
+		transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+		box-shadow: 0 2px 8px rgba(35, 55, 255, 0.3);
 	}
 
 	.button-primary:hover {
 		background: var(--accent-dark);
 		color: white;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 16px rgba(35, 55, 255, 0.35);
 	}
 
+	.button-ghost {
+		display: inline-block;
+		padding: 0.75em 1.75em;
+		border: 2px solid rgb(var(--gray-light));
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		border-radius: 100px;
+		font-weight: 600;
+		font-size: 1em;
+		transition: border-color var(--transition), color var(--transition), transform var(--transition);
+	}
+
+	.button-ghost:hover {
+		border-color: var(--accent);
+		color: var(--accent);
+		transform: translateY(-2px);
+	}
+
+	/* Intro */
 	.intro {
+		margin: 1em 0 3.5em;
+	}
+
+	.intro-inner {
+		background: var(--accent-light);
+		border-radius: var(--radius);
+		padding: 2em 2.5em;
+		border-left: 4px solid var(--accent);
+	}
+
+	.intro-inner h2 {
+		font-size: 1.6em;
+		margin-bottom: 0.5em;
+	}
+
+	.intro-inner p {
+		margin-bottom: 0.75em;
+		color: rgb(var(--gray-dark));
+	}
+
+	.intro-inner a {
+		font-weight: 700;
+	}
+
+	/* Compare */
+	.compare {
 		margin-bottom: 3em;
 	}
 
-	.intro h2 {
-		font-size: 2em;
+	.compare-header {
+		text-align: center;
+		margin-bottom: 2em;
 	}
 
-	.compare h2 {
+	.compare-header h2 {
 		font-size: 2em;
+		margin-bottom: 0.25em;
+	}
+
+	.compare-subtitle {
+		color: rgb(var(--gray));
+		margin: 0;
 	}
 
 	.platform-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 1.25em;
-		margin: 1.5em 0 1em;
+		gap: 1.5em;
+		margin-bottom: 1.25em;
 	}
 
 	.platform-card {
 		background: white;
-		border-radius: 8px;
-		padding: 1.25em;
+		border-radius: var(--radius);
+		padding: 1.75em 1.5em;
 		box-shadow: var(--box-shadow);
+		border: 1.5px solid rgb(var(--gray-light));
+		display: flex;
+		flex-direction: column;
+		gap: 1.25em;
+		transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 	}
+
+	.platform-card:hover {
+		transform: translateY(-6px);
+		box-shadow: var(--box-shadow-hover);
+		border-color: var(--accent);
+	}
+
+	.card-top { flex: 1; }
+
+	.platform-badge {
+		display: inline-block;
+		font-size: 0.72em;
+		font-weight: 700;
+		padding: 0.3em 0.75em;
+		border-radius: 100px;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.75em;
+	}
+
+	.kalshi-badge { background: #e8f5e9; color: #2e7d32; }
+	.polymarket-badge { background: #e3f2fd; color: #1565c0; }
+	.crypto-badge { background: #fff3e0; color: #e65100; }
 
 	.platform-card h3 {
-		font-size: 1.25em;
-		margin-bottom: 0.75em;
+		font-size: 1.4em;
+		margin-bottom: 0.5em;
 	}
 
-	.platform-card p {
-		margin-bottom: 0.75em;
-		font-size: 0.95em;
+	.best-for {
+		font-size: 0.92em;
+		margin: 0;
+		color: rgb(var(--gray-dark));
+		line-height: 1.5;
+	}
+
+	.best-for .label {
+		font-weight: 700;
+		color: rgb(var(--black));
+	}
+
+	.card-features {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		border-top: 1px solid rgb(var(--gray-light));
+		padding-top: 1em;
+	}
+
+	.card-features li {
+		font-size: 0.9em;
+		color: rgb(var(--gray));
+		padding: 0.3em 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin: 0;
+	}
+
+	.card-features li::before {
+		content: "✓ ";
+		color: var(--accent);
+		font-weight: 700;
+	}
+
+	.card-actions {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6em;
 	}
 
 	.button-secondary {
 		display: block;
+		text-align: center;
+		padding: 0.6em 1em;
 		font-size: 0.9em;
+		font-weight: 600;
 		color: rgb(var(--gray-dark));
+		border: 1.5px solid rgb(var(--gray-light));
+		border-radius: 8px;
 		text-decoration: none;
-		margin-bottom: 0.75em;
+		transition: border-color var(--transition), color var(--transition), background var(--transition);
 	}
 
 	.button-secondary:hover {
+		border-color: var(--accent);
 		color: var(--accent);
+		background: var(--accent-light);
 	}
 
 	.button-platform {
-		display: inline-block;
-		padding: 0.6em 1.1em;
-		border: 2px solid var(--accent);
+		display: block;
+		text-align: center;
+		padding: 0.65em 1em;
+		background: var(--accent);
+		color: white;
 		border-radius: 8px;
-		color: var(--accent);
-		text-decoration: none;
 		font-weight: 700;
-		font-size: 0.95em;
+		font-size: 0.9em;
+		text-decoration: none;
+		transition: background var(--transition), transform var(--transition);
 	}
 
 	.button-platform:hover {
-		background: var(--accent);
+		background: var(--accent-dark);
 		color: white;
+		transform: translateY(-1px);
 	}
 
 	.compare-note {
-		font-size: 0.9em;
+		font-size: 0.88em;
 		color: rgb(var(--gray));
-		margin-bottom: 0;
+		text-align: center;
+		margin: 0;
 	}
 
+	/* Quick compare table */
+	.quick-compare {
+		margin-bottom: 3em;
+	}
+
+	.quick-compare h2 {
+		font-size: 1.6em;
+		margin-bottom: 1em;
+	}
+
+	.table-wrapper {
+		overflow-x: auto;
+		border-radius: var(--radius);
+		box-shadow: var(--box-shadow);
+		border: 1px solid rgb(var(--gray-light));
+	}
+
+	.table-wrapper table {
+		margin: 0;
+	}
+
+	.check { color: #2e7d32; font-weight: 700; }
+	.cross { color: #c62828; font-weight: 700; }
+	.neutral { color: #e65100; font-weight: 700; }
+
+	/* Disclosure */
 	.affiliate-disclosure {
-		margin-top: 3em;
-		padding-top: 1.5em;
-		border-top: 1px solid rgb(var(--gray-light));
-		font-size: 0.9em;
+		padding: 1.25em 1.5em;
+		border-radius: var(--radius);
+		background: rgb(var(--gray-light));
+		font-size: 0.88em;
 		color: rgb(var(--gray));
+		text-align: center;
 	}
 
+	/* Responsive */
 	@media (max-width: 720px) {
 		.platform-grid {
 			grid-template-columns: 1fr;
 		}
+
+		.hero { padding: 1.5em 0 2.5em; }
+		.intro-inner { padding: 1.5em; }
 	}
 </style>
