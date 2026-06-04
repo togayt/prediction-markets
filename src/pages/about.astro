@@ -1,34 +1,41 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import Base from "../layouts/Base.astro";
+import { SITE_NAME } from "../config";
 ---
 
-<Layout
-	title="About"
-	description="Who this prediction markets guide is for, what we cover, and how we stay independent."
-	pubDate={new Date('June 4 2026')}
-	heroImage={AboutHeroImage}
+<Base
+  title="About"
+  description="Who is behind Predikt, and why you can trust our prediction-market guides."
+  path="/about"
 >
-	<p>
-		This site is for anyone curious about prediction markets — whether you have never placed a trade
-		or you are comparing platforms before signing up. You do not need a finance background or crypto
-		experience to follow along. We explain concepts in plain English and focus on what actually matters
-		when you choose where to trade.
-	</p>
+  <article class="prose wrap">
+    <p class="eyebrow">About</p>
+    <h1>About {SITE_NAME}</h1>
+    <p class="lede">
+      {SITE_NAME} exists to make prediction markets understandable for normal
+      people — without the jargon, hype, or pressure.
+    </p>
 
-	<p>
-		Here you will find beginner-friendly guides on how prediction markets work, plus honest
-		comparisons of major platforms including Kalshi, Polymarket, and Crypto.com. We cover who each
-		platform suits, how they differ on regulation and access, and what to check before you create an
-		account. The goal is to help you make an informed choice, not to hype any single option.
-	</p>
+    <h2>What we do</h2>
+    <p>
+      We write clear, honest guides explaining what prediction markets are, how
+      they work, and how the main platforms differ. When a guide helps you choose a
+      platform and you sign up through our link, we may earn a commission. That's
+      how the site is funded — and we tell you every time.
+    </p>
 
-	<p>
-		This is an independent, educational resource. We are not a broker, exchange, or financial
-		adviser, and we do not speak for Kalshi, Polymarket, Crypto.com, or any other company. Guides and
-		comparisons are written to be useful and accurate; when we link to platforms, we explain how that
-		relationship works on our <a href="/how-we-make-money">How we make money</a> page. Nothing here is
-		personalized investment advice — always do your own research and only risk what you can afford to
-		lose.
-	</p>
-</Layout>
+    <h2>How we keep it honest</h2>
+    <ul>
+      <li>We label affiliate links clearly and explain <a href="/how-we-make-money">how we make money</a>.</li>
+      <li>We tell you when a platform <em>isn't</em> available to you, even if that means no commission.</li>
+      <li>We don't promise winnings. Trading involves risk, and we say so.</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>
+      Questions, corrections, or feedback? Email
+      <a href="mailto:hello@example.com">hello@example.com</a>.
+      <span style="color:var(--ink-soft); font-size:0.9rem;">(Replace with your real address.)</span>
+    </p>
+  </article>
+</Base>

@@ -1,39 +1,52 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import Base from "../layouts/Base.astro";
+import { SITE_NAME } from "../config";
 ---
 
-<Layout
-	title="How we make money"
-	description="How affiliate links support this site, how we choose what to recommend, and important disclaimers."
-	pubDate={new Date('June 4 2026')}
+<Base
+  title="How we make money"
+  description="Predikt earns affiliate commissions when readers sign up to platforms through our links. Here is our full, plain-English disclosure."
+  path="/how-we-make-money"
 >
-	<p>
-		This site is free to read because we use affiliate links. When you sign up for a platform through
-		one of our links, we may earn a commission from that company. You do not pay extra — the price,
-		fees, and offers you see on the platform are the same as if you had gone there directly.
-	</p>
+  <article class="prose wrap">
+    <p class="eyebrow">Disclosure</p>
+    <h1>How we make money</h1>
+    <p class="lede">
+      Short version: some of our links are affiliate links. If you sign up to a
+      platform through one of them, we may earn a commission — at no extra cost to
+      you.
+    </p>
 
-	<p>
-		Commissions help cover the time it takes to research, write, and update guides and comparisons.
-		That is what keeps the content free instead of behind a paywall or full of intrusive ads.
-	</p>
+    <h2>The details</h2>
+    <p>
+      {SITE_NAME} is free to read. We fund the site through affiliate partnerships
+      with the platforms we write about. When you click certain links and then
+      create or fund an account, the platform may pay us a referral commission.
+    </p>
+    <p>
+      This <strong>never changes the price you pay</strong>, and it doesn't unlock
+      anything different for you versus going to the platform directly.
+    </p>
 
-	<p>
-		We only recommend platforms we believe are genuinely useful for the readers we write for. A higher
-		payout does not automatically mean a better review or a top spot on our comparison page. If a
-		platform is a poor fit for beginners, restricted in your country, or hard to use, we say so — even
-		when we have an affiliate relationship with it.
-	</p>
+    <h2>Does it affect what we recommend?</h2>
+    <p>
+      We aim to recommend what genuinely fits your situation — especially your
+      country and experience level. If a platform isn't available to you, we'll say
+      so even though it means we earn nothing from you. Our long-term value depends
+      on you trusting us, so honest guidance is also good business.
+    </p>
 
-	<p>
-		<strong>Trade responsibly.</strong> Prediction markets involve real money and real risk. Prices move,
-		rules vary by platform and jurisdiction, and you can lose what you put in. Never trade with money you
-		need for essentials, and take time to understand how each platform works before depositing.
-	</p>
+    <h2>How links are labelled</h2>
+    <p>
+      Affiliate links are marked near the link itself and carry the appropriate
+      technical tags. This page is our standing disclosure, in line with guidance
+      such as the US FTC's rules on endorsements.
+    </p>
 
-	<p>
-		<strong>Educational content only.</strong> Everything on this site is for learning and comparison. It
-		is not financial, legal, or tax advice, and it is not a recommendation to buy, sell, or hold any
-		contract or asset. Check each platform’s terms and your local laws before signing up.
-	</p>
-</Layout>
+    <div class="callout">
+      <strong>Not financial advice.</strong> Everything here is educational. Trading
+      on prediction markets carries risk; only use money you can afford to lose, and
+      follow the laws and age limits where you live.
+    </div>
+  </article>
+</Base>

@@ -1,0 +1,72 @@
+---
+import Base from "../layouts/Base.astro";
+import Cta from "../components/Cta.astro";
+import { platforms } from "../config";
+
+const rows: { label: string; key: keyof (typeof platforms)[number] }[] = [
+  { label: "Best for", key: "bestFor" },
+  { label: "Region", key: "region" },
+  { label: "Regulation", key: "regulation" },
+  { label: "Fees", key: "fees" },
+  { label: "Funding", key: "funding" },
+  { label: "Ease of use", key: "ease" },
+];
+---
+
+<Base
+  title="Kalshi vs Polymarket vs Crypto.com"
+  description="A side-by-side comparison of Kalshi, Polymarket and Crypto.com prediction markets — fees, regions, regulation and what each is best for."
+  path="/compare"
+>
+  <article class="prose wrap">
+    <p class="eyebrow">Compare</p>
+    <h1>Kalshi vs Polymarket vs Crypto.com</h1>
+    <p class="lede">
+      The three platforms most people consider — compared on the things that
+      actually matter. The right pick depends mostly on <strong>where you live</strong>
+      and whether you're comfortable with crypto.
+    </p>
+
+    <div class="table-scroll">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th>&nbsp;</th>
+            {platforms.map((p) => <th>{p.name}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr>
+              <th>{row.label}</th>
+              {platforms.map((p) => <td>{p[row.key]}</td>)}
+            </tr>
+          ))}
+          <tr>
+            <th>Sign up</th>
+            {platforms.map((p) => (
+              <td><Cta platform={p} label={`Visit ${p.name}`} ghost /></td>
+            ))}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Which should you pick?</h2>
+    <ul>
+      <li><strong>You're in the US:</strong> Kalshi is the regulated, beginner-friendly choice. Polymarket is not available to you.</li>
+      <li><strong>You're outside the US and comfortable with crypto:</strong> Polymarket offers the widest range of markets.</li>
+      <li><strong>You already use Crypto.com:</strong> their events product is a convenient add-on to an account you have.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Note on availability.</strong> Rules change and vary by country and
+      age (18+/21+). This page is a starting point — always confirm what's legal and
+      available where you live on the platform's own site.
+    </div>
+
+    <div class="btn-row" style="margin-top:2rem;">
+      <a class="btn btn--ghost" href="/guides/how-to-use-kalshi">How to get started →</a>
+    </div>
+  </article>
+</Base>

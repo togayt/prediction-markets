@@ -1,185 +1,75 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
-import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import Base from '../../layouts/Base.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={`Blog | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-				max-width: calc(100% - 2em);
-			}
+<Base
+	title="Guides"
+	description="Plain-English guides and honest reviews of Kalshi, Polymarket, and Crypto.com prediction markets."
+	path="/blog"
+>
+	<section class="prose wrap">
+		<p class="eyebrow">All guides</p>
+		<h1>Guides and platform reviews</h1>
+		<p class="lede">Everything you need to understand prediction markets and choose the right platform.</p>
 
-			.page-header {
-				margin-bottom: 2.5em;
-				padding-bottom: 1.5em;
-				border-bottom: 1px solid rgb(var(--gray-light));
-			}
+		<div class="post-grid">
+			{posts.map((post) => (
+				<a class="post-card" href={`/blog/${post.id}/`}>
+					<span class="post-date"><FormattedDate date={post.data.pubDate} /></span>
+					<h3>{post.data.title}</h3>
+					{post.data.description && <p>{post.data.description}</p>}
+				</a>
+			))}
+		</div>
+	</section>
+</Base>
 
-			.page-header h1 {
-				font-size: 2.2em;
-				margin-bottom: 0.25em;
-			}
+<style>
+	.post-grid {
+		display: grid;
+		gap: 1.2rem;
+		grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+		margin: 2rem 0;
+	}
 
-			.page-header p {
-				color: rgb(var(--gray));
-				margin: 0;
-			}
+	.post-card {
+		background: var(--white);
+		border: 1px solid var(--rule);
+		border-radius: 14px;
+		padding: 1.4rem;
+		text-decoration: none;
+		color: var(--ink);
+		display: block;
+		transition: transform .15s ease, box-shadow .15s ease;
+	}
 
-			.post-grid {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				gap: 1.75em;
-				list-style: none;
-				margin: 0;
-				padding: 0;
-			}
+	.post-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 12px 30px -18px rgba(0,0,0,.4);
+		color: var(--ink);
+	}
 
-			.post-grid li:first-child {
-				grid-column: 1 / -1;
-			}
+	.post-date {
+		font-size: 0.82rem;
+		color: var(--ink-soft);
+		font-family: var(--font-mono);
+		letter-spacing: 0.04em;
+	}
 
-			.post-card {
-				display: block;
-				background: white;
-				border-radius: var(--radius);
-				box-shadow: var(--box-shadow);
-				border: 1.5px solid rgb(var(--gray-light));
-				overflow: hidden;
-				text-decoration: none;
-				color: inherit;
-				transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-			}
+	.post-card h3 {
+		margin: 0.4rem 0 0.3rem;
+		font-size: 1.1rem;
+	}
 
-			.post-card:hover {
-				transform: translateY(-5px);
-				box-shadow: var(--box-shadow-hover);
-				border-color: var(--accent);
-				color: inherit;
-			}
-
-			.post-card img {
-				width: 100%;
-				height: 220px;
-				object-fit: cover;
-				border-radius: 0;
-				display: block;
-			}
-
-			li:first-child .post-card img {
-				height: 320px;
-			}
-
-			.post-card-body {
-				padding: 1.25em 1.5em 1.5em;
-			}
-
-			.post-date {
-				font-size: 0.82em;
-				color: rgb(var(--gray));
-				margin-bottom: 0.4em;
-				display: block;
-			}
-
-			.post-title {
-				font-size: 1.2em;
-				font-weight: 700;
-				color: rgb(var(--black));
-				margin: 0 0 0.5em;
-				line-height: 1.3;
-				transition: color var(--transition);
-			}
-
-			li:first-child .post-title {
-				font-size: 1.7em;
-			}
-
-			.post-card:hover .post-title {
-				color: var(--accent);
-			}
-
-			.post-desc {
-				font-size: 0.9em;
-				color: rgb(var(--gray));
-				margin: 0;
-				line-height: 1.5;
-				display: -webkit-box;
-				-webkit-line-clamp: 3;
-				-webkit-box-orient: vertical;
-				overflow: hidden;
-			}
-
-			@media (max-width: 720px) {
-				.post-grid {
-					grid-template-columns: 1fr;
-					gap: 1.25em;
-				}
-				li:first-child {
-					grid-column: auto;
-				}
-				li:first-child .post-card img {
-					height: 220px;
-				}
-				li:first-child .post-title {
-					font-size: 1.3em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<div class="page-header animate-fade-up">
-				<h1>Guides and reviews</h1>
-				<p>Everything you need to understand prediction markets and choose the right platform.</p>
-			</div>
-			<ul class="post-grid">
-				{
-					posts.map((post, i) => (
-						<li class={`reveal reveal-delay-${Math.min(i + 1, 3)}`}>
-							<a class="post-card" href={`/blog/${post.id}/`}>
-								{post.data.heroImage && (
-									<Image width={720} height={360} src={post.data.heroImage} alt="" />
-								)}
-								<div class="post-card-body">
-									<span class="post-date">
-										<FormattedDate date={post.data.pubDate} />
-									</span>
-									<h2 class="post-title">{post.data.title}</h2>
-									{post.data.description && (
-										<p class="post-desc">{post.data.description}</p>
-									)}
-								</div>
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</main>
-		<Footer />
-
-		<script>
-			const observer = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) entry.target.classList.add('visible');
-					});
-				},
-				{ threshold: 0.1 }
-			);
-			document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-		</script>
-	</body>
-</html>
+	.post-card p {
+		font-size: 0.92rem;
+		color: var(--ink-soft);
+		margin: 0;
+	}
+</style>

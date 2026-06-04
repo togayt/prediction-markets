@@ -1,0 +1,73 @@
+---
+import Base from "../../layouts/Base.astro";
+import Cta from "../../components/Cta.astro";
+import { platforms } from "../../config";
+const kalshi = platforms.find((p) => p.id === "kalshi")!;
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to use Kalshi: sign up and place your first trade",
+  step: [
+    { "@type": "HowToStep", name: "Create your account" },
+    { "@type": "HowToStep", name: "Verify your identity" },
+    { "@type": "HowToStep", name: "Add funds" },
+    { "@type": "HowToStep", name: "Find a market" },
+    { "@type": "HowToStep", name: "Place your first trade" },
+  ],
+};
+---
+
+<Base
+  title="How to use Kalshi (step-by-step)"
+  description="A beginner's step-by-step guide to signing up for Kalshi, funding your account, and placing your first prediction-market trade."
+  path="/guides/how-to-use-kalshi"
+  schema={howToSchema}
+>
+  <article class="prose wrap">
+    <p class="eyebrow">Guide</p>
+    <h1>How to use Kalshi: your first trade</h1>
+    <p class="lede">
+      Kalshi is the most beginner-friendly regulated option for US residents.
+      Here's the whole process, start to finish — it takes about 10 minutes.
+    </p>
+
+    <ol class="steps">
+      <li>
+        <strong>Create your account.</strong> Sign up with your email and a
+        password. You'll need to be 18+ and a US resident.
+      </li>
+      <li>
+        <strong>Verify your identity.</strong> Because Kalshi is regulated, you'll
+        confirm your identity (a standard KYC step, like opening a bank account).
+      </li>
+      <li>
+        <strong>Add funds.</strong> Link a bank account or debit card and deposit a
+        small amount to start — even $10 is fine.
+      </li>
+      <li>
+        <strong>Find a market.</strong> Browse categories (economics, politics,
+        weather, sports). Each market is a yes/no question with a live price.
+      </li>
+      <li>
+        <strong>Place your first trade.</strong> Pick "Yes" or "No", choose how many
+        contracts, and confirm. Your potential profit and loss are shown before you
+        commit.
+      </li>
+    </ol>
+
+    <div class="callout">
+      <strong>Beginner tip.</strong> Start tiny. Place one small trade just to see
+      how the whole cycle works — buying, watching the price, and settlement — before
+      putting in more.
+    </div>
+
+    <h2>Ready to start?</h2>
+    <Cta platform={kalshi} />
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:1.5rem;">
+      Educational content only, not financial advice. Only trade with money you can
+      afford to lose. Availability and rules depend on your location and age.
+    </p>
+  </article>
+</Base>

@@ -1,0 +1,27 @@
+---
+import type { Platform } from "../config";
+
+interface Props {
+  platform: Platform;
+  label?: string;
+  ghost?: boolean;
+}
+const { platform, label, ghost = false } = Astro.props;
+const text = label ?? `Get started on ${platform.name}`;
+---
+
+<div>
+  <a
+    class={`btn ${ghost ? "btn--ghost" : ""}`}
+    href={platform.affiliateUrl}
+    target="_blank"
+    rel="sponsored nofollow noopener"
+  >
+    {text} <span aria-hidden="true">→</span>
+  </a>
+  <p class="aff-note">
+    {platform.affiliate
+      ? "Affiliate link — we may earn a commission at no cost to you."
+      : "Official site (affiliate link coming soon)."}
+  </p>
+</div>
