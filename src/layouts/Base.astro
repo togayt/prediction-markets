@@ -54,6 +54,15 @@ const orgSchema = {
     <!-- Structured data for Google + AI answers -->
     <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRWMH5Y23P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QRWMH5Y23P');
+    </script>
   </head>
 
   <body>
