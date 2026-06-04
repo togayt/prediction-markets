@@ -1,5 +1,5 @@
 /* ============================================================
-   Predikt — editorial "forecaster's almanac" design system
+   Predikt: editorial "forecaster's almanac" design system
    Fonts loaded in Base.astro <head>. Edit colors here.
    ============================================================ */
 
@@ -9,9 +9,9 @@
   --ink: #1c1b18;
   --ink-soft: #4a463d;
   --rule: #d8d0bf;
-  --green: #1f6b4f;       /* primary accent — "forecast green" */
+  --green: #1f6b4f;       /* primary accent: "forecast green" */
   --green-deep: #154a37;
-  --amber: #b5641e;       /* secondary accent — odds / numbers */
+  --amber: #b5641e;       /* secondary accent: odds / numbers */
   --white: #fffdf8;
 
   --font-display: "Fraunces", Georgia, serif;

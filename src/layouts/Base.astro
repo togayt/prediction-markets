@@ -5,14 +5,14 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description: string;
-  /** path like "/compare" — used for canonical URL */
+  /** path like "/compare": used for canonical URL */
   path?: string;
   /** optional extra JSON-LD object (FAQ, Article, etc.) */
   schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const { title, description, path = "/", schema } = Astro.props;
-const fullTitle = path === "/" ? `${SITE_NAME} — ${SITE_TAGLINE}` : `${title} · ${SITE_NAME}`;
+const fullTitle = path === "/" ? `${SITE_NAME}: ${SITE_TAGLINE}` : `${title} · ${SITE_NAME}`;
 const canonical = new URL(path, SITE_URL).href;
 
 const orgSchema = {
@@ -81,7 +81,7 @@ const orgSchema = {
       <div class="wrap">
         <div>
           <strong>{SITE_NAME}</strong> · {SITE_TAGLINE}<br />
-          <span style="font-size:0.82rem">Educational content only — not financial advice. 18+ where applicable. Trade responsibly.</span>
+          <span style="font-size:0.82rem">Educational content only: not financial advice. 18+ where applicable. Trade responsibly.</span>
         </div>
         <nav>
           <a href="/about">About</a>

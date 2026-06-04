@@ -1,19 +1,19 @@
 // ──────────────────────────────────────────────────────────────────────────
-//  EDIT THIS FILE — it controls your whole site's brand + affiliate links.
+//  EDIT THIS FILE: it controls your whole site's brand + affiliate links.
 //  You don't need to touch anything else to change the name or wire up money.
 // ──────────────────────────────────────────────────────────────────────────
 
-// 1) YOUR BRAND NAME — change this one line to whatever domain you buy.
+// 1) YOUR BRAND NAME: change this one line to whatever domain you buy.
 export const SITE_NAME = "Predikt";
 
-// 2) YOUR DOMAIN — set this after you buy it (used for SEO + sitemap).
+// 2) YOUR DOMAIN: set this after you buy it (used for SEO + sitemap).
 export const SITE_URL = "https://venerable-lollipop-5e026d.netlify.app";
 
 // 3) A one-line tagline shown in the header / search results.
 export const SITE_TAGLINE =
-  "Plain-English guides to prediction markets — and where to trade them.";
+  "Plain-English guides to prediction markets: and where to trade them.";
 
-// 4) PLATFORMS — paste your real affiliate links into `affiliateUrl` once
+// 4) PLATFORMS: paste your real affiliate links into `affiliateUrl` once
 //    your programs approve you. Until then they point to the public site so
 //    nothing is broken. `affiliate: false` means "no link yet" (no money).
 export type Platform = {
@@ -39,7 +39,7 @@ export const platforms: Platform[] = [
     region: "United States",
     regulation: "CFTC-regulated (US)",
     fees: "Per-contract trading fee; no deposit fee",
-    funding: "USD — bank transfer / debit",
+    funding: "USD: bank transfer / debit",
     bestFor: "US users who want a regulated, mainstream experience",
     ease: "Easy",
     notes: "The most beginner-friendly regulated option for US residents.",
@@ -49,7 +49,7 @@ export const platforms: Platform[] = [
     name: "Polymarket",
     affiliateUrl: "https://polymarket.com", // ← replace with your affiliate link
     affiliate: false,
-    region: "Global — NOT available to US persons",
+    region: "Global: NOT available to US persons",
     regulation: "Crypto-native, offshore",
     fees: "Low/zero trading fees historically",
     funding: "USDC (crypto stablecoin)",
@@ -62,7 +62,7 @@ export const platforms: Platform[] = [
     name: "Crypto.com",
     affiliateUrl: "https://crypto.com", // ← replace with your affiliate link
     affiliate: false,
-    region: "Varies by country — check local availability",
+    region: "Varies by country: check local availability",
     regulation: "Licensed in multiple regions",
     fees: "Varies by product",
     funding: "Crypto + fiat (region dependent)",
