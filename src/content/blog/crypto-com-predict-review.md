@@ -1,7 +1,7 @@
 ---
 title: 'Crypto.com Predict Review: Prediction Markets for Crypto Users'
 description: 'A look at Crypto.com Predict: the prediction market offering from one of the largest crypto exchanges. Who it suits, how it works, and how it compares.'
-pubDate: 'Jun 04 2026'
+pubDate: 'Jul 03 2025'
 heroImage: '../../assets/blog-placeholder-3.jpg'
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'Polymarket Review: The Largest Crypto Prediction Market'
 description: 'A thorough look at Polymarket: the biggest prediction market by volume. How it works, who can use it, fees, and what to know before signing up.'
-pubDate: 'Jun 04 2026'
+pubDate: 'Jun 10 2025'
 heroImage: '../../assets/blog-placeholder-2.jpg'
 ---
 

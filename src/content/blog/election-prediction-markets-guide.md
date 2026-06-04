@@ -1,7 +1,8 @@
 ---
 title: 'Election Prediction Markets: How to Trade Political Outcomes'
 description: 'A guide to trading elections on prediction markets: how political markets work, what drives prices, and what to watch out for before you buy.'
-pubDate: 'Jun 04 2026'
+pubDate: 'Oct 02 2025'
+heroImage: '../../assets/blog-placeholder-3.jpg'
 ---
 
 Election markets are where most people first encounter prediction markets. Prices on who will win the presidency, a Senate seat, or a local ballot measure get quoted in news articles and compared to polls. Here is how they actually work and what you should know before you trade one.

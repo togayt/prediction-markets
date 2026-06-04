@@ -1,7 +1,8 @@
 ---
 title: "Polymarket Beginner's Guide: How to Sign Up and Place Your First Trade"
 description: 'Step-by-step instructions for getting started on Polymarket: setting up a wallet, getting USDC, funding your account, and placing your first trade.'
-pubDate: 'Jun 04 2026'
+pubDate: 'Mar 06 2026'
+heroImage: '../../assets/blog-placeholder-3.jpg'
 ---
 
 Polymarket is the world's largest prediction market by volume, but it requires a few steps that are unfamiliar if you have not used crypto before. This guide walks through the process from zero to your first trade.

@@ -1,7 +1,7 @@
 ---
 title: 'Kalshi Review: The Regulated US Prediction Market'
 description: 'An honest look at Kalshi: the CFTC-regulated prediction market platform. Who it suits, what you can trade, fees, and how it compares to alternatives.'
-pubDate: 'Jun 04 2026'
+pubDate: 'May 20 2025'
 heroImage: '../../assets/blog-placeholder-1.jpg'
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: 'Prediction Market Fees Explained: What You Actually Pay to Trade'
 description: 'A clear breakdown of every fee you might pay on Kalshi, Polymarket, and Crypto.com: trading fees, spreads, deposit costs, and withdrawal charges.'
-pubDate: 'Jun 04 2026'
+pubDate: 'Jan 15 2026'
+heroImage: '../../assets/blog-placeholder-1.jpg'
 ---
 
 Fees are one of the least-discussed but most important factors in prediction market trading. A trade that looks profitable on paper can turn into a loss once you account for the full cost of entering and exiting. Here is a clear breakdown.

@@ -1,7 +1,8 @@
 ---
 title: 'How to Read Prediction Market Prices (And What They Actually Mean)'
 description: 'Prediction market prices look like probabilities: but they are not quite the same thing. Here is what a price of 65 cents really tells you, and what it does not.'
-pubDate: 'Jun 04 2026'
+pubDate: 'Jul 24 2025'
+heroImage: '../../assets/blog-placeholder-5.jpg'
 ---
 
 One of the first things that confuses newcomers to prediction markets is the price. You see "Yes: 65¢" on a contract and wonder: what does that number actually mean? Is it a guaranteed 65% chance? Is it what the platform thinks will happen?
