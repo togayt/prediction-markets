@@ -1,0 +1,132 @@
+---
+/**
+ * EVENT PAGE TEMPLATE
+ * ───────────────────
+ * How to use:
+ *   1. Copy this file to src/pages/events/your-event-name.astro
+ *   2. Edit every value in the CONFIGURATION block below
+ *   3. Fill in the content sections marked with TODO
+ *   4. Run `npm run build` to verify
+ *   5. Deploy — ideally publish 2-4 weeks before the event peaks in search
+ *
+ * Naming convention: use-lowercase-hyphens.astro
+ * URL produced:      /events/use-lowercase-hyphens
+ */
+
+import Base from "../../layouts/Base.astro";
+import FAQSchema from "../../components/FAQSchema.astro";
+import ArticleSchema from "../../components/ArticleSchema.astro";
+import Cta from "../../components/Cta.astro";
+import { platforms } from "../../config";
+
+// ─── CONFIGURATION — edit these values ───────────────────────────────────────
+
+const EVENT = {
+  // Page meta
+  title: "TODO: Event Title Prediction Markets — Where to Trade",
+  description: "TODO: 150-160 char meta description answering the user intent. E.g. 'Track live odds on the 2026 World Cup with Kalshi and Polymarket. Compare prices, read the resolution rules, and place your first trade in minutes.'",
+  path: "/events/todo-event-slug",      // must match filename
+  pubDate: new Date("2025-01-01"),       // when you first publish
+  updatedDate: new Date(),               // update each time you edit
+
+  // Page content
+  headline: "TODO: [Event Name] Prediction Markets",
+  lede: "TODO: One sentence that directly answers 'where can I bet on [event]?' — e.g. 'The [Event] is live on Kalshi and Polymarket: here is where odds are best and how to trade them.'",
+  eventDate: "TODO: e.g. June 14 — July 14, 2026",
+  eventDescription: "TODO: 2-3 sentences about the event itself and why prediction markets make it interesting.",
+
+  // Which platforms have markets for this event?
+  availableOn: ["kalshi", "polymarket", "crypto-com"],   // platform ids from config.ts
+};
+
+// ─── FAQ — add/edit questions specific to this event ─────────────────────────
+
+const faqs = [
+  {
+    q: `Where can I trade on ${EVENT.headline}?`,
+    a: "TODO: Name the specific platforms available and whether the event is live.",
+  },
+  {
+    q: "How does the market resolve?",
+    a: "TODO: Explain the resolution source (official results, oracle, etc.) and timing.",
+  },
+  {
+    q: "What is the minimum trade size?",
+    a: "On Kalshi and Polymarket, you can typically trade for as little as $1-$5 per contract. Check the specific market for current minimums.",
+  },
+  {
+    q: "Can US residents trade this market?",
+    a: "US residents can use Kalshi (CFTC-regulated). Polymarket is not available to US persons.",
+  },
+];
+
+// ─── DATA — filter to available platforms ─────────────────────────────────────
+
+const availablePlatforms = platforms.filter(p => EVENT.availableOn.includes(p.id));
+---
+
+<Base
+  title={EVENT.title}
+  description={EVENT.description}
+  path={EVENT.path}
+>
+  <ArticleSchema
+    title={EVENT.title}
+    description={EVENT.description}
+    url={EVENT.path}
+    pubDate={EVENT.pubDate}
+    updatedDate={EVENT.updatedDate}
+    type="Article"
+  />
+
+  <article class="prose wrap">
+    <p class="eyebrow">Event markets · {EVENT.eventDate}</p>
+    <h1>{EVENT.headline}</h1>
+
+    <p class="lede">{EVENT.lede}</p>
+
+    <!-- ── WHERE TO TRADE ─────────────────────────────────────────────────── -->
+    <h2>Where to trade</h2>
+    {availablePlatforms.map(p => (
+      <div style="margin-bottom: 1rem;">
+        <Cta platform={p} label={`Trade on ${p.name}`} />
+        <p style="font-size:0.88rem; color:var(--ink-soft); margin-top:0.3rem;">{p.notes}</p>
+      </div>
+    ))}
+
+    <!-- ── ABOUT THE EVENT ────────────────────────────────────────────────── -->
+    <h2>About the event</h2>
+    <p>{EVENT.eventDescription}</p>
+
+    <!-- TODO: Add 2-4 paragraphs covering:
+         - Key questions being traded (name specific markets)
+         - Current prices / probabilities (update as event approaches)
+         - What drives the odds (key factors to watch)
+         - How and when markets resolve
+    -->
+
+    <div class="callout">
+      <strong>Resolution note.</strong> TODO: Describe exactly how and when the market
+      resolves. Which source is the oracle? What counts as the official result?
+      This is the most important thing to read before trading.
+    </div>
+
+    <!-- ── MARKET TIPS ─────────────────────────────────────────────────────── -->
+    <h2>Tips for trading this market</h2>
+    <ul>
+      <li>TODO: Event-specific tip 1 (e.g. "Volume spikes 48 hrs before — place limit orders early")</li>
+      <li>TODO: Event-specific tip 2</li>
+      <li>Read the resolution criteria before you trade — small wording differences matter.</li>
+      <li>Start small. Even $5 lets you experience the full cycle without real risk.</li>
+    </ul>
+
+    <!-- ── FAQ ────────────────────────────────────────────────────────────── -->
+    <h2>Frequently asked questions</h2>
+    <FAQSchema faqs={faqs} />
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:2rem;">
+      Educational content only, not financial advice. Availability varies by region.
+      Only trade with money you can afford to lose.
+    </p>
+  </article>
+</Base>

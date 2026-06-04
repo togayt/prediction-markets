@@ -1,15 +1,25 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import ArticleSchema from '../components/ArticleSchema.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Base from './Base.astro';
+import { SITE_URL } from '../config';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & { id: string };
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, id } = Astro.props;
+const url = `/blog/${id}/`;
 ---
 
-<Base title={title} description={description}>
+<Base title={title} description={description} path={url}>
+	<ArticleSchema
+		title={title}
+		description={description}
+		url={url}
+		pubDate={pubDate}
+		updatedDate={updatedDate}
+	/>
 	<article>
 		{heroImage && (
 			<div class="hero-img">

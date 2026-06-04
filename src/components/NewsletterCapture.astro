@@ -1,0 +1,135 @@
+---
+/**
+ * NewsletterCapture — a minimal email signup form.
+ *
+ * Set PUBLIC_NEWSLETTER_ENDPOINT in your .env / Netlify environment variables
+ * to the form-action URL from your email provider (MailerLite, Buttondown, etc.)
+ * If the env var is empty the component renders nothing, so it's safe to deploy
+ * before you've set up a provider.
+ */
+
+const endpoint = import.meta.env.PUBLIC_NEWSLETTER_ENDPOINT;
+---
+
+{endpoint && (
+  <section class="newsletter-section">
+    <div class="wrap newsletter-wrap">
+      <div class="newsletter-text">
+        <strong>Stay ahead of the markets.</strong>
+        <p>New guides, platform news, and market-moving events — no spam, unsubscribe any time.</p>
+      </div>
+      <form class="newsletter-form" action={endpoint} method="POST">
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="your@email.com"
+          aria-label="Email address"
+        />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-privacy">
+        Your email is used only to send the newsletter. We do not sell or share it.
+        <a href="/about">Privacy info →</a>
+      </p>
+    </div>
+  </section>
+)}
+
+<style>
+  .newsletter-section {
+    background: var(--forest, #1f6b4f);
+    color: #fff;
+    padding: 2.5rem 0;
+  }
+
+  .newsletter-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .newsletter-text {
+    max-width: 520px;
+  }
+
+  .newsletter-text strong {
+    font-family: var(--font-serif, Georgia, serif);
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .newsletter-text p {
+    margin: 0;
+    opacity: 0.85;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .newsletter-form input[type="email"] {
+    padding: 0.55rem 1rem;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    font-size: 0.95rem;
+    width: 260px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .newsletter-form input[type="email"]::placeholder {
+    color: rgba(255,255,255,0.55);
+  }
+
+  .newsletter-form input[type="email"]:focus {
+    border-color: rgba(255,255,255,0.8);
+  }
+
+  .newsletter-form button {
+    padding: 0.55rem 1.4rem;
+    background: #fff;
+    color: var(--forest, #1f6b4f);
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+
+  .newsletter-form button:hover {
+    opacity: 0.9;
+  }
+
+  .newsletter-privacy {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin: 0;
+  }
+
+  .newsletter-privacy a {
+    color: inherit;
+  }
+
+  @media (min-width: 700px) {
+    .newsletter-wrap {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-text {
+      flex: 1 1 300px;
+    }
+  }
+</style>

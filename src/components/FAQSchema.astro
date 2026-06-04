@@ -1,0 +1,48 @@
+---
+/**
+ * FAQSchema — drops a JSON-LD FAQPage block and renders the visible Q&A.
+ *
+ * Usage:
+ *   import FAQSchema from '../components/FAQSchema.astro';
+ *   <FAQSchema faqs={[{ q: "Question?", a: "Answer." }]} />
+ *
+ * The component renders both the schema AND the visible <details> FAQ block,
+ * so you only need to maintain one array.
+ */
+
+interface FAQ {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  faqs: FAQ[];
+  /** Set to false to suppress the visible HTML block (schema only). */
+  showHtml?: boolean;
+}
+
+const { faqs, showHtml = true } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+{showHtml && (
+  <section class="faq-block">
+    {faqs.map((f) => (
+      <details class="faq">
+        <summary>{f.q}</summary>
+        <p>{f.a}</p>
+      </details>
+    ))}
+  </section>
+)}

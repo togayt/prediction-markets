@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import FAQSchema from "../components/FAQSchema.astro";
 
 const faqs = [
   {
@@ -12,30 +13,27 @@ const faqs = [
   },
   {
     q: "How do prices work?",
-    a: "Contracts typically trade between 0 and 100 cents (or $0–$1). A price of 65¢ means the market estimates roughly a 65% chance of that outcome. If you're right, each contract settles at $1; if not, it settles at $0.",
+    a: "Contracts typically trade between 0 and 100 cents (or $0-$1). A price of 65 cents means the market estimates roughly a 65% chance of that outcome. If you're right, each contract settles at $1; if not, it settles at $0.",
   },
   {
     q: "How much money do I need to start?",
     a: "Most platforms let you start with a small amount: often $1 to $20. Never deposit more than you can comfortably afford to lose.",
   },
+  {
+    q: "What happens when a market resolves?",
+    a: "When the event outcome is confirmed, winning contracts settle at $1.00 each and losing contracts settle at $0. Your profit or loss is automatically credited to your account balance.",
+  },
+  {
+    q: "Can I exit a trade before the event resolves?",
+    a: "Yes. You can sell your contracts at any time while the market is open. If the probability has moved in your favor, you can take a profit early. If your view has changed, you can cut losses before settlement.",
+  },
 ];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 ---
 
 <Base
   title="What is a prediction market?"
   description="A prediction market is a marketplace where you trade contracts on the outcome of real-world events. Here's how they work, whether they're legal, and how to start."
   path="/what-is-a-prediction-market"
-  schema={faqSchema}
 >
   <article class="prose wrap">
     <p class="eyebrow">The basics</p>
@@ -52,7 +50,7 @@ const faqSchema = {
     <p>
       Each market asks a yes/no question: for example, "Will inflation be above 3%
       this year?" You can buy "Yes" or "No" contracts. Prices move between 0 and
-      100 cents as people trade. A "Yes" price of 65¢ roughly means the market
+      100 cents as people trade. A "Yes" price of 65 cents roughly means the market
       thinks there's a 65% chance the answer is yes.
     </p>
     <p>
@@ -62,7 +60,7 @@ const faqSchema = {
     </p>
 
     <div class="callout">
-      <strong>Quick example.</strong> You buy 10 "Yes" contracts at 40¢ ($4 total).
+      <strong>Quick example.</strong> You buy 10 "Yes" contracts at 40 cents ($4 total).
       The event happens, so each settles at $1: you receive $10, a $6 profit. If it
       hadn't happened, you'd have lost the $4.
     </div>
@@ -87,12 +85,7 @@ const faqSchema = {
     <p>See our <a href="/compare">side-by-side comparison</a> to find what's available where you are.</p>
 
     <h2>Frequently asked questions</h2>
-    {faqs.map((f) => (
-      <details class="faq">
-        <summary>{f.q}</summary>
-        <p>{f.a}</p>
-      </details>
-    ))}
+    <FAQSchema faqs={faqs} />
 
     <div class="btn-row" style="margin-top:2.5rem;">
       <a class="btn" href="/compare">Compare the platforms →</a>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f3ea"/>
+  <!-- Paper grain texture suggestion -->
+  <rect width="1200" height="630" fill="url(#grain)" opacity="0.04"/>
+  <!-- Green accent bar -->
+  <rect x="0" y="0" width="8" height="630" fill="#1f6b4f"/>
+  <!-- Title -->
+  <text x="80" y="240" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#1a1a1a" letter-spacing="-2">Predikt</text>
+  <!-- Tagline -->
+  <text x="80" y="310" font-family="Georgia, serif" font-size="32" fill="#3d3d3d">Plain-English guides to prediction markets.</text>
+  <!-- Divider -->
+  <rect x="80" y="350" width="120" height="4" fill="#1f6b4f" rx="2"/>
+  <!-- Sub-text -->
+  <text x="80" y="410" font-family="Arial, sans-serif" font-size="24" fill="#666">Kalshi · Polymarket · Crypto.com</text>
+  <!-- Domain -->
+  <text x="80" y="570" font-family="Arial, sans-serif" font-size="20" fill="#999">venerable-lollipop-5e026d.netlify.app</text>
+</svg>

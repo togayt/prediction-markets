@@ -1,6 +1,7 @@
 ---
 import { SITE_NAME, SITE_URL, SITE_TAGLINE } from "../config";
 import "../styles/global.css";
+import NewsletterCapture from "../components/NewsletterCapture.astro";
 
 interface Props {
   title: string;
@@ -9,11 +10,18 @@ interface Props {
   path?: string;
   /** optional extra JSON-LD object (FAQ, Article, etc.) */
   schema?: Record<string, unknown> | Record<string, unknown>[];
+  /** absolute or root-relative URL for og:image — defaults to /og-default.svg */
+  ogImage?: string;
 }
 
-const { title, description, path = "/", schema } = Astro.props;
+const { title, description, path = "/", schema, ogImage = "/og-default.svg" } = Astro.props;
 const fullTitle = path === "/" ? `${SITE_NAME}: ${SITE_TAGLINE}` : `${title} · ${SITE_NAME}`;
 const canonical = new URL(path, SITE_URL).href;
+const ogImageAbsolute = ogImage.startsWith("http") ? ogImage : new URL(ogImage, SITE_URL).href;
+
+// Webmaster verification — set these in .env (see .env.example)
+const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
+const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION;
 
 const orgSchema = {
   "@context": "https://schema.org",
@@ -33,13 +41,23 @@ const orgSchema = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
-    <!-- Open Graph / social -->
+    <!-- Webmaster verification (set PUBLIC_GSC_VERIFICATION / PUBLIC_BING_VERIFICATION in .env) -->
+    {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
+    {bingVerification && <meta name="msvalidate.01" content={bingVerification} />}
+
+    <!-- Open Graph / social sharing -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:image" content={ogImageAbsolute} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageAbsolute} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -86,6 +104,8 @@ const orgSchema = {
     <main>
       <slot />
     </main>
+
+    <NewsletterCapture />
 
     <footer class="site-foot">
       <div class="wrap">

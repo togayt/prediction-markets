@@ -1,0 +1,60 @@
+---
+/**
+ * ArticleSchema — outputs a JSON-LD Article (or BlogPosting) block.
+ *
+ * Usage in BlogPost.astro or any article page:
+ *   import ArticleSchema from '../components/ArticleSchema.astro';
+ *   <ArticleSchema
+ *     title={title}
+ *     description={description}
+ *     url={canonicalUrl}
+ *     pubDate={pubDate}
+ *     updatedDate={updatedDate}
+ *     imageUrl="/og-default.svg"
+ *   />
+ */
+
+import { SITE_NAME, SITE_URL } from '../config';
+
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  imageUrl?: string;
+  type?: 'Article' | 'BlogPosting';
+}
+
+const {
+  title,
+  description,
+  url,
+  pubDate,
+  updatedDate,
+  imageUrl = '/og-default.svg',
+  type = 'BlogPosting',
+} = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": type,
+  headline: title,
+  description,
+  url: new URL(url, SITE_URL).href,
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate ?? pubDate).toISOString(),
+  image: new URL(imageUrl, SITE_URL).href,
+  publisher: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+  },
+  author: {
+    "@type": "Organization",
+    name: SITE_NAME,
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
