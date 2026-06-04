@@ -1,9 +1,14 @@
 ---
 import Base from "../layouts/Base.astro";
 import Cta from "../components/Cta.astro";
-import { platforms } from "../config";
+import FAQSchema from "../components/FAQSchema.astro";
+import RelatedGuides from "../components/RelatedGuides.astro";
+import { platforms } from "../data/platforms";
 
-const rows: { label: string; key: keyof (typeof platforms)[number] }[] = [
+// Only show the three platforms we have live reviews for in the main table
+const mainPlatforms = platforms.filter((p) => p.live);
+
+const rows: { label: string; key: keyof (typeof mainPlatforms)[number] }[] = [
   { label: "Best for", key: "bestFor" },
   { label: "Region", key: "region" },
   { label: "Regulation", key: "regulation" },
@@ -11,40 +16,68 @@ const rows: { label: string; key: keyof (typeof platforms)[number] }[] = [
   { label: "Funding", key: "funding" },
   { label: "Ease of use", key: "ease" },
 ];
+
+const faqs = [
+  {
+    q: "Which prediction market is best for US residents?",
+    a: "Kalshi is the only CFTC-regulated prediction market exchange available to US residents. It accepts USD and requires no crypto. Polymarket's US availability should be verified before trading.",
+  },
+  {
+    q: "Is Polymarket available in the US?",
+    a: platforms.find((p) => p.id === "polymarket")!.eligibility.usStatus,
+  },
+  {
+    q: "Which platform has the lowest fees?",
+    a: "Fee structures change. Verify current fees on each platform's fee schedule page before trading. Links to official fee pages are in each platform's review.",
+  },
+  {
+    q: "Do I need crypto to use these platforms?",
+    a: "Kalshi accepts USD only — no crypto required. Polymarket requires USDC on the Polygon network. Crypto.com supports both fiat and crypto depending on your region.",
+  },
+  {
+    q: "Are there more platforms than these three?",
+    a: "Yes. Robinhood, PredictIt, DraftKings, Coinbase, and Manifold also offer prediction market or event contract products. See our full roundup at /best-prediction-markets-2026.",
+  },
+];
 ---
 
 <Base
-  title="Kalshi vs Polymarket vs Crypto.com"
-  description="A side-by-side comparison of Kalshi, Polymarket and Crypto.com prediction markets: fees, regions, regulation and what each is best for."
+  title="Kalshi vs Polymarket vs Crypto.com — Prediction Market Comparison 2026"
+  description="Side-by-side comparison of Kalshi, Polymarket, and Crypto.com prediction markets: fees, regions, regulation, and what each platform is actually best for."
   path="/compare"
 >
   <article class="prose wrap">
     <p class="eyebrow">Compare</p>
     <h1>Kalshi vs Polymarket vs Crypto.com</h1>
     <p class="lede">
-      The three platforms most people consider: compared on the things that
-      actually matter. The right pick depends mostly on <strong>where you live</strong>
-      and whether you're comfortable with crypto.
+      The first question is eligibility, not features. If you are a US resident, only
+      Kalshi is fully available to you. If you are outside the US, Polymarket is likely
+      your best option (verify current US status). Everything else is secondary.
     </p>
+
+    <div class="callout callout--warn">
+      <strong>Polymarket US status: verify before trading.</strong><br />
+      {platforms.find((p) => p.id === "polymarket")!.eligibility.usStatus}
+    </div>
 
     <div class="table-scroll">
       <table class="compare">
         <thead>
           <tr>
             <th>&nbsp;</th>
-            {platforms.map((p) => <th>{p.name}</th>)}
+            {mainPlatforms.map((p) => <th>{p.name}</th>)}
           </tr>
         </thead>
         <tbody>
           {rows.map((row) => (
             <tr>
               <th>{row.label}</th>
-              {platforms.map((p) => <td>{p[row.key]}</td>)}
+              {mainPlatforms.map((p) => <td>{p[row.key]}</td>)}
             </tr>
           ))}
           <tr>
             <th>Sign up</th>
-            {platforms.map((p) => (
+            {mainPlatforms.map((p) => (
               <td><Cta platform={p} label={`Visit ${p.name}`} ghost /></td>
             ))}
           </tr>
@@ -54,19 +87,30 @@ const rows: { label: string; key: keyof (typeof platforms)[number] }[] = [
 
     <h2>Which should you pick?</h2>
     <ul>
-      <li><strong>You're in the US:</strong> Kalshi is the regulated, beginner-friendly choice. Polymarket is not available to you.</li>
-      <li><strong>You're outside the US and comfortable with crypto:</strong> Polymarket offers the widest range of markets.</li>
-      <li><strong>You already use Crypto.com:</strong> their events product is a convenient add-on to an account you have.</li>
+      <li><strong>You're in the US:</strong> Kalshi is the CFTC-regulated, beginner-friendly choice. <a href="/guides/how-to-use-kalshi">See our Kalshi guide →</a></li>
+      <li><strong>You're outside the US and comfortable with crypto:</strong> Polymarket offers the widest range of markets and highest liquidity. Verify current US status before trading.</li>
+      <li><strong>You already use Crypto.com:</strong> their Predict product is a convenient add-on. Verify availability in your country.</li>
+      <li><strong>Want more options?</strong> <a href="/best-prediction-markets-2026">See all 8 platforms ranked →</a></li>
     </ul>
 
     <div class="callout">
-      <strong>Note on availability.</strong> Rules change and vary by country and
-      age (18+/21+). This page is a starting point: always confirm what's legal and
-      available where you live on the platform's own site.
+      <strong>Note on availability.</strong> Rules change and vary by country and age.
+      This table is a starting point: always confirm what is legal and available where
+      you live on the platform's own site before depositing.
     </div>
 
+    <h2>Frequently asked questions</h2>
+    <FAQSchema faqs={faqs} />
+
     <div class="btn-row" style="margin-top:2rem;">
-      <a class="btn btn--ghost" href="/guides/how-to-use-kalshi">How to get started →</a>
+      <a class="btn" href="/best-prediction-markets-2026">See all platforms ranked →</a>
+      <a class="btn btn--ghost" href="/guides/how-to-use-kalshi">How to start on Kalshi →</a>
     </div>
+
+    <RelatedGuides slug="compare" />
   </article>
 </Base>
+
+<style>
+  .callout--warn { background: #fef9ec; border-left-color: #b5641e; }
+</style>

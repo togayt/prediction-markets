@@ -1,0 +1,117 @@
+---
+import Base from "../../layouts/Base.astro";
+import FAQSchema from "../../components/FAQSchema.astro";
+import AffiliateCTA from "../../components/AffiliateCTA.astro";
+import RelatedGuides from "../../components/RelatedGuides.astro";
+import { platformById } from "../../data/platforms";
+
+const p = platformById["robinhood"]!;
+
+const faqs = [
+  {
+    q: "Does Robinhood have prediction markets?",
+    a: "Robinhood has offered CFTC-regulated event contracts — a product that functions similarly to prediction markets. Verify the current availability and range of markets on their platform before signing up.",
+  },
+  {
+    q: "Is Robinhood available to US residents for event contracts?",
+    a: p.eligibility.usStatus,
+  },
+  {
+    q: "Do I need a new account for Robinhood event contracts?",
+    a: "If you already have a Robinhood brokerage account, event contracts may be available within your existing account — a key advantage over starting fresh with a new platform.",
+  },
+  {
+    q: "How do Robinhood event contracts compare to Kalshi?",
+    a: "Both are CFTC-regulated and USD-funded. Kalshi is a dedicated prediction market exchange with a wider market selection. Robinhood's advantage is the zero-friction onboarding for existing Robinhood users.",
+  },
+];
+---
+
+<Base
+  title={`Robinhood Event Contracts Review 2026 — Prediction Markets on Robinhood`}
+  description="An honest look at Robinhood's CFTC-regulated event contracts: what markets are available, who it's for, and when to choose Kalshi instead."
+  path="/platforms/robinhood"
+>
+  <article class="prose wrap">
+    <p class="eyebrow">Platform overview</p>
+    <h1>Robinhood event contracts: prediction markets for existing Robinhood users</h1>
+
+    <p class="lede">
+      Robinhood added CFTC-regulated event contracts — markets on real-world outcomes
+      traded in dollars. The big question: is the market selection wide enough to make
+      Robinhood a serious prediction market destination, or is it better to open a
+      dedicated Kalshi account?
+    </p>
+
+    <!-- ELIGIBILITY FIRST — always lead with this -->
+    <div class="callout callout--eligibility">
+      <strong>Eligibility first.</strong> {p.eligibility.usStatus}
+      <br />Source: <a href={p.eligibility.source} rel="noopener noreferrer" target="_blank">{p.eligibility.source}</a>
+      (last checked: {p.eligibility.lastUpdated})
+    </div>
+
+    <h2>Who should use Robinhood for event contracts?</h2>
+    <p>{p.bestFor}</p>
+
+    <h2>Who should skip Robinhood</h2>
+    <p>{p.skipIf}</p>
+    <p>
+      If you want the widest market selection for prediction markets, Kalshi is a dedicated
+      exchange with more events. If you are outside the US, Polymarket (verify current US
+      status) or Crypto.com Predict may be available options.
+    </p>
+
+    <h2>Key facts</h2>
+    <ul>
+      <li><strong>Regulation:</strong> {p.regulation}</li>
+      <li><strong>Fees:</strong> {p.fees}</li>
+      <li><strong>Minimum deposit:</strong> {p.minDeposit}</li>
+      <li><strong>Funding methods:</strong> {p.fundingMethods}</li>
+      <li><strong>Withdrawal methods:</strong> {p.withdrawalMethods}</li>
+      <li><strong>Mobile app:</strong> {p.mobileApp.notes}</li>
+      <li><strong>Ease of use:</strong> {p.ease}</li>
+    </ul>
+
+    <h2>How Robinhood event contracts work</h2>
+    <p>
+      Event contracts on Robinhood function like binary options: you buy a "Yes" or "No"
+      position on an outcome. Each contract settles at $1 if the outcome occurs or $0 if
+      it does not. The entry price reflects the implied probability at time of purchase.
+    </p>
+    <p>
+      Because Robinhood is CFTC-regulated, this is a US-legal product. The mechanics are
+      the same as on Kalshi — the difference is platform breadth and whether you already
+      have an account.
+    </p>
+
+    <h2>Our take</h2>
+    <p>
+      Robinhood event contracts are a low-effort way for existing Robinhood users to
+      experiment with prediction markets. For anyone starting fresh, Kalshi is the more
+      developed dedicated platform. Neither is better in absolute terms — it depends on
+      what you already have.
+    </p>
+
+    <h2>Get started</h2>
+    <AffiliateCTA platformId="robinhood" showPromo={true} />
+
+    <h2>Frequently asked questions</h2>
+    <FAQSchema faqs={faqs} />
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:2rem;">
+      Educational content only — not financial advice. Verify all fees, availability, and
+      product details directly with Robinhood before trading.
+      <a href="/risks-and-responsible-trading">Read our risks page →</a>
+    </p>
+
+    <RelatedGuides slug="kalshi-review" />
+  </article>
+</Base>
+
+<style>
+  .callout--eligibility {
+    background: #eef6f1;
+    border-left-color: var(--forest, #1f6b4f);
+  }
+  .callout--warn { background: #fef9ec; border-left-color: #b5641e; }
+</style>

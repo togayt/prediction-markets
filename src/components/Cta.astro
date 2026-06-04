@@ -1,19 +1,25 @@
 ---
-import type { Platform } from "../config";
+/**
+ * Cta.astro — backward-compatible CTA button.
+ * For new pages use AffiliateCTA.astro (reads by platformId string).
+ * This wrapper keeps existing pages working unchanged.
+ */
+import type { PlatformData } from "../data/platforms";
 
 interface Props {
-  platform: Platform;
+  platform: PlatformData;
   label?: string;
   ghost?: boolean;
 }
 const { platform, label, ghost = false } = Astro.props;
 const text = label ?? `Get started on ${platform.name}`;
+const href = platform.affiliateUrl ?? `https://${platform.slug === 'crypto-com' ? 'crypto.com' : platform.slug + '.com'}`;
 ---
 
 <div>
   <a
     class={`btn ${ghost ? "btn--ghost" : ""}`}
-    href={platform.affiliateUrl}
+    href={href}
     target="_blank"
     rel="sponsored nofollow noopener"
   >

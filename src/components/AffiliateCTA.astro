@@ -1,0 +1,94 @@
+---
+/**
+ * AffiliateCTA — canonical CTA component reading from src/data/platforms.ts.
+ *
+ * Usage:
+ *   import AffiliateCTA from '../components/AffiliateCTA.astro';
+ *   <AffiliateCTA platformId="kalshi" />
+ *   <AffiliateCTA platformId="kalshi" label="Sign up for Kalshi" ghost />
+ *
+ * - Never renders a promo code unless platforms.ts has a real non-null promoCode.
+ * - Shows "official site (affiliate link coming soon)" when affiliateUrl is null.
+ * - rel="sponsored nofollow noopener" always applied.
+ */
+import { platformById } from '../data/platforms';
+
+interface Props {
+  platformId: string;
+  label?: string;
+  ghost?: boolean;
+  showPromo?: boolean;
+}
+
+const { platformId, label, ghost = false, showPromo = false } = Astro.props;
+const p = platformById[platformId];
+
+if (!p) throw new Error(`AffiliateCTA: unknown platformId "${platformId}" — check src/data/platforms.ts`);
+
+const href = p.affiliateUrl ?? p.reviewPath ?? "#";
+const isAffiliate = p.affiliateUrl !== null;
+const btnLabel = label ?? `Get started on ${p.name}`;
+---
+
+<div class="affiliate-cta-wrap">
+  <a
+    href={href}
+    class={`btn ${ghost ? "btn-ghost" : ""}`}
+    rel="sponsored nofollow noopener"
+    target="_blank"
+  >
+    {btnLabel}
+  </a>
+
+  {isAffiliate ? (
+    <p class="cta-note">Affiliate link — we may earn a commission at no cost to you. <a href="/how-we-make-money">How we make money →</a></p>
+  ) : (
+    <p class="cta-note">Official site (affiliate link coming soon)</p>
+  )}
+
+  {showPromo && p.promoCode && (
+    <p class="promo-note">
+      Promo code: <code>{p.promoCode}</code>
+      {p.promoNote && <span> — {p.promoNote}</span>}
+    </p>
+  )}
+
+  {showPromo && !p.promoCode && (
+    <p class="promo-note promo-none">
+      No current promo code — check the <a href={p.affiliateUrl ?? "#"} rel="nofollow noopener" target="_blank">official site</a> for any active offers.
+    </p>
+  )}
+</div>
+
+<style>
+  .affiliate-cta-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: flex-start;
+  }
+
+  .cta-note,
+  .promo-note {
+    font-size: 0.78rem;
+    color: var(--ink-soft, #666);
+    margin: 0;
+  }
+
+  .cta-note a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .promo-note code {
+    font-family: var(--font-mono, monospace);
+    background: var(--paper-mid, #ece8de);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    font-size: 0.85em;
+  }
+
+  .promo-none {
+    font-style: italic;
+  }
+</style>

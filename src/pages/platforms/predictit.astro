@@ -1,0 +1,111 @@
+---
+import Base from "../../layouts/Base.astro";
+import FAQSchema from "../../components/FAQSchema.astro";
+import AffiliateCTA from "../../components/AffiliateCTA.astro";
+import RelatedGuides from "../../components/RelatedGuides.astro";
+import { platformById } from "../../data/platforms";
+
+const p = platformById["predictit"]!;
+
+const faqs = [
+  {
+    q: "Is PredictIt still operating?",
+    a: p.eligibility.usStatus,
+  },
+  {
+    q: "What markets does PredictIt offer?",
+    a: "PredictIt has historically focused on US political prediction markets — elections, legislation, appointments. It is not the right platform for sports, crypto, or macro-economic markets.",
+  },
+  {
+    q: "Is there a maximum trade size on PredictIt?",
+    a: "PredictIt historically imposed position limits per market. Verify current limits directly on their platform — these may have changed.",
+  },
+  {
+    q: "How do PredictIt fees compare to Kalshi?",
+    a: "PredictIt has charged a trading fee and a withdrawal fee. Verify current figures on their fee schedule page. These figures change and must not be assumed from older reviews.",
+  },
+];
+---
+
+<Base
+  title="PredictIt Review 2026 — US Political Prediction Markets"
+  description="An honest look at PredictIt: what it offers, its regulatory history, current operating status, and whether it is still a good option for political prediction markets."
+  path="/platforms/predictit"
+>
+  <article class="prose wrap">
+    <p class="eyebrow">Platform overview</p>
+    <h1>PredictIt: US political prediction markets</h1>
+
+    <p class="lede">
+      PredictIt is a US-facing prediction market historically focused on political events:
+      elections, legislation, government appointments. Before you trade, verify its current
+      legal and operational status — it has had a complicated regulatory history.
+    </p>
+
+    <!-- ELIGIBILITY FIRST -->
+    <div class="callout callout--warn">
+      <strong>Verify operating status before signing up.</strong><br />
+      {p.eligibility.usStatus}
+      <br />Source: <a href={p.eligibility.source} rel="noopener noreferrer" target="_blank">{p.eligibility.source}</a>
+      (last checked: {p.eligibility.lastUpdated})
+    </div>
+
+    <h2>Regulatory background</h2>
+    <p>
+      PredictIt originally operated under a CFTC no-action letter granted to Victoria
+      University of Wellington (New Zealand) as an academic research project. In August
+      2022, the CFTC revoked that letter, citing violations of the conditions. PredictIt
+      obtained a court injunction allowing continued operation while the dispute was
+      litigated. Verify whether that injunction, a new authorization, or some other legal
+      basis is currently in place before you deposit funds.
+    </p>
+    <p>
+      This history matters because it bears on the platform's long-term reliability. A
+      platform operating under contested legal authority is higher-risk than a CFTC-licensed
+      exchange like Kalshi.
+    </p>
+
+    <h2>Who should use PredictIt?</h2>
+    <p>{p.bestFor}</p>
+
+    <h2>Who should skip PredictIt</h2>
+    <p>{p.skipIf}</p>
+
+    <h2>Key facts</h2>
+    <ul>
+      <li><strong>Focus:</strong> US political markets</li>
+      <li><strong>Region:</strong> {p.eligibility.regions}</li>
+      <li><strong>Regulation:</strong> {p.regulation}</li>
+      <li><strong>Fees:</strong> {p.fees}</li>
+      <li><strong>Minimum deposit:</strong> {p.minDeposit}</li>
+      <li><strong>Funding methods:</strong> {p.fundingMethods}</li>
+      <li><strong>Ease of use:</strong> {p.ease}</li>
+    </ul>
+
+    <h2>Alternatives to consider</h2>
+    <p>
+      If you primarily want political prediction markets and are in the US, Kalshi is a
+      fully CFTC-licensed alternative with a clearer regulatory standing. If PredictIt's
+      status is unresolved, Kalshi is the safer choice until you can verify PredictIt's
+      current authorization.
+    </p>
+
+    <h2>Get started</h2>
+    <AffiliateCTA platformId="predictit" label="Check PredictIt" showPromo={true} />
+
+    <h2>Frequently asked questions</h2>
+    <FAQSchema faqs={faqs} />
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:2rem;">
+      Educational content only — not financial or legal advice. Verify PredictIt's
+      current regulatory and operational status before depositing funds.
+      <a href="/risks-and-responsible-trading">Read our risks page →</a>
+    </p>
+
+    <RelatedGuides slug="kalshi-review" />
+  </article>
+</Base>
+
+<style>
+  .callout--warn { background: #fef9ec; border-left-color: #b5641e; }
+</style>

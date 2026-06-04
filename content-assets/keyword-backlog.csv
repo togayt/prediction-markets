@@ -1,31 +1,71 @@
-keyword,persona,intent,target_page,status
-what is a prediction market,P1 (curious newcomer),informational,/what-is-a-prediction-market,published
-how do prediction markets work,P1 (curious newcomer),informational,/what-is-a-prediction-market,published
-prediction market explained,P1 (curious newcomer),informational,/what-is-a-prediction-market,published
-are prediction markets legal,P1 (curious newcomer),informational,/what-is-a-prediction-market,published
-kalshi review,P2 (US resident ready to trade),commercial,/blog/kalshi-review,published
-is kalshi legit,P2 (US resident ready to trade),commercial,/blog/kalshi-review,published
-kalshi vs polymarket,P2 (US resident ready to trade),commercial,/blog/kalshi-vs-polymarket,published
-kalshi fees,P2 (US resident ready to trade),commercial,/blog/prediction-market-fees-explained,published
-how to use kalshi,P2 (US resident ready to trade),transactional,/guides/how-to-use-kalshi,published
-kalshi sign up,P2 (US resident ready to trade),transactional,/guides/how-to-use-kalshi,published
-polymarket review,P3 (international crypto user),commercial,/blog/polymarket-review,published
-polymarket beginners guide,P3 (international crypto user),transactional,/blog/polymarket-beginners-guide,published
-how to use polymarket,P3 (international crypto user),transactional,/blog/polymarket-beginners-guide,published
-polymarket usdc,P3 (international crypto user),informational,/blog/polymarket-beginners-guide,published
-crypto prediction markets,P3 (international crypto user),informational,/blog/crypto-prediction-markets-guide,published
-best prediction markets,P4 (comparison shopper),commercial,/compare,published
-prediction market platforms comparison,P4 (comparison shopper),commercial,/compare,published
-crypto.com predict review,P4 (comparison shopper),commercial,/blog/crypto-com-predict-review,published
-election prediction markets,P1 (curious newcomer),informational,/blog/election-prediction-markets-guide,published
-sports prediction markets,P2 (US resident ready to trade),informational,/blog/sports-prediction-markets,published
-prediction market strategies,P2 (US resident ready to trade),informational,/blog/prediction-market-strategies-beginners,published
-how to read prediction market prices,P1 (curious newcomer),informational,/blog/how-to-read-prediction-market-prices,published
-prediction market fees,P4 (comparison shopper),commercial,/blog/prediction-market-fees-explained,published
-how do prediction markets make money,P1 (curious newcomer),informational,/blog/how-prediction-markets-make-money,published
-world cup prediction market 2026,P2 (US resident ready to trade),transactional,/events/world-cup-2026,todo
-nfl prediction markets,P2 (US resident ready to trade),transactional,/events/nfl-season,todo
-fed rate prediction market,P4 (comparison shopper),informational,/events/fed-rate-decision,todo
-prediction market affiliate program,P4 (comparison shopper),informational,/guides/affiliate-programs-explained,published
-kalshi affiliate program,P4 (comparison shopper),informational,/guides/affiliate-programs-explained,published
-polymarket alternatives,P4 (comparison shopper),commercial,/compare,published
+keyword,persona,intent,target_page,competition_guess,status
+what is a prediction market,P1 (curious newcomer),informational,/what-is-a-prediction-market,medium,published
+how do prediction markets work,P1 (curious newcomer),informational,/what-is-a-prediction-market,medium,published
+prediction market explained,P1 (curious newcomer),informational,/what-is-a-prediction-market,low,published
+are prediction markets legal,P1 (curious newcomer),informational,/what-is-a-prediction-market,low,published
+prediction markets legal in US,P2 (US resident ready to trade),informational,/what-is-a-prediction-market,low,published
+best prediction markets 2026,P4 (comparison shopper),commercial,/best-prediction-markets-2026,medium,published
+best prediction market platforms,P4 (comparison shopper),commercial,/best-prediction-markets-2026,medium,published
+top prediction market sites,P4 (comparison shopper),commercial,/best-prediction-markets-2026,medium,published
+kalshi review,P2 (US resident ready to trade),commercial,/blog/kalshi-review,medium,published
+is kalshi legit,P2 (US resident ready to trade),commercial,/blog/kalshi-review,low,published
+kalshi fees,P2 (US resident ready to trade),commercial,/blog/prediction-market-fees-explained,low,published
+kalshi promo code,P2 (US resident ready to trade),transactional,/platforms/kalshi,low,todo-stub
+kalshi bonus code,P2 (US resident ready to trade),transactional,/platforms/kalshi,low,todo-stub
+kalshi vs polymarket,P4 (comparison shopper),commercial,/blog/kalshi-vs-polymarket,medium,published
+how to use kalshi,P2 (US resident ready to trade),transactional,/guides/how-to-use-kalshi,low,published
+kalshi sign up,P2 (US resident ready to trade),transactional,/guides/how-to-use-kalshi,low,published
+is kalshi available in [state],P2 (US resident ready to trade),informational,/platforms/kalshi,low,todo-stub
+polymarket review,P3 (international crypto user),commercial,/blog/polymarket-review,medium,published
+is polymarket legal in the US,P2 (US resident ready to trade),informational,/blog/polymarket-review,medium,published
+polymarket US,P2 (US resident ready to trade),informational,/blog/polymarket-review,medium,published
+how to use polymarket,P3 (international crypto user),transactional,/blog/polymarket-beginners-guide,low,published
+polymarket usdc,P3 (international crypto user),informational,/blog/polymarket-beginners-guide,low,published
+polymarket beginners guide,P3 (international crypto user),transactional,/blog/polymarket-beginners-guide,low,published
+polymarket vs kalshi,P4 (comparison shopper),commercial,/blog/kalshi-vs-polymarket,medium,published
+crypto.com predict review,P4 (comparison shopper),commercial,/blog/crypto-com-predict-review,low,published
+best prediction markets platforms comparison,P4 (comparison shopper),commercial,/compare,medium,published
+prediction market platforms comparison,P4 (comparison shopper),commercial,/compare,medium,published
+prediction market fees,P4 (comparison shopper),commercial,/blog/prediction-market-fees-explained,low,published
+prediction market fees comparison,P4 (comparison shopper),commercial,/blog/prediction-market-fees-explained,low,published
+how to read prediction market prices,P1 (curious newcomer),informational,/blog/how-to-read-prediction-market-prices,low,published
+prediction market strategies,P2 (US resident ready to trade),informational,/blog/prediction-market-strategies-beginners,low,published
+can you make money on prediction markets,P2 (US resident ready to trade),informational,/blog/how-prediction-markets-make-money,low,published
+do prediction markets make money,P2 (US resident ready to trade),informational,/blog/how-prediction-markets-make-money,low,published
+election prediction markets,P1 (curious newcomer),informational,/blog/election-prediction-markets-guide,medium,published
+sports prediction markets,P2 (US resident ready to trade),informational,/blog/sports-prediction-markets,medium,published
+crypto prediction markets,P3 (international crypto user),informational,/blog/crypto-prediction-markets-guide,medium,published
+prediction market risks,P1 (curious newcomer),informational,/risks-and-responsible-trading,low,published
+are prediction markets gambling,P1 (curious newcomer),informational,/risks-and-responsible-trading,low,published
+prediction markets vs gambling,P1 (curious newcomer),informational,/risks-and-responsible-trading,low,published
+prediction markets vs sports betting,P4 (comparison shopper),commercial,/risks-and-responsible-trading,low,published
+robinhood prediction markets,P2 (US resident ready to trade),commercial,/platforms/robinhood,low,published
+robinhood event contracts,P2 (US resident ready to trade),commercial,/platforms/robinhood,low,published
+predictit review,P2 (US resident ready to trade),commercial,/platforms/predictit,low,published
+is predictit still operating,P2 (US resident ready to trade),informational,/platforms/predictit,low,published
+predictit legal,P2 (US resident ready to trade),informational,/platforms/predictit,low,published
+manifold markets review,P1 (curious newcomer),commercial,/platforms/manifold,low,published
+manifold prediction market,P1 (curious newcomer),informational,/platforms/manifold,low,published
+draftkings prediction markets,P2 (US resident ready to trade),commercial,/platforms/draftkings,low,published
+coinbase prediction markets,P3 (international crypto user),commercial,/platforms/coinbase,low,published
+prediction markets in [state] (template),P2 (US resident ready to trade),informational,/platforms/kalshi,low,todo-stub
+prediction markets in California,P2 (US resident ready to trade),informational,/platforms/kalshi,low,todo-stub
+prediction markets in Texas,P2 (US resident ready to trade),informational,/platforms/kalshi,low,todo-stub
+prediction markets in New York,P2 (US resident ready to trade),informational,/platforms/kalshi,low,todo-stub
+prediction markets in Florida,P2 (US resident ready to trade),informational,/platforms/kalshi,low,todo-stub
+prediction markets in UK,P5 (international non-US),informational,/compare,low,todo-stub
+prediction markets in Australia,P5 (international non-US),informational,/compare,low,todo-stub
+prediction markets in Canada,P5 (international non-US),informational,/compare,low,todo-stub
+prediction markets in India,P5 (international non-US),informational,/compare,low,todo-stub
+prediction markets for beginners,P1 (curious newcomer),informational,/what-is-a-prediction-market,low,published
+how to start prediction markets,P1 (curious newcomer),transactional,/guides/how-to-use-kalshi,low,published
+prediction market tutorial,P1 (curious newcomer),informational,/guides/how-to-use-kalshi,low,published
+world cup prediction market 2026,P2 (US resident ready to trade),transactional,/events/world-cup-2026,medium,todo
+nfl prediction markets,P2 (US resident ready to trade),transactional,/events/nfl-season,medium,todo
+fed rate prediction market,P4 (comparison shopper),informational,/events/fed-rate-decision,low,todo
+election markets 2026,P1 (curious newcomer),informational,/events/us-elections-2026,medium,todo
+prediction market affiliate program,P4 (comparison shopper),informational,/guides/affiliate-programs-explained,low,published
+kalshi affiliate program,P4 (comparison shopper),informational,/guides/affiliate-programs-explained,low,published
+polymarket alternatives,P4 (comparison shopper),commercial,/compare,medium,published
+prediction market no deposit bonus,P2 (US resident ready to trade),transactional,/best-prediction-markets-2026,low,todo-stub
+free prediction market,P1 (curious newcomer),informational,/platforms/manifold,low,published

@@ -1,0 +1,90 @@
+---
+import Base from "../../layouts/Base.astro";
+import FAQSchema from "../../components/FAQSchema.astro";
+import AffiliateCTA from "../../components/AffiliateCTA.astro";
+import RelatedGuides from "../../components/RelatedGuides.astro";
+import { platformById } from "../../data/platforms";
+
+const p = platformById["coinbase"]!;
+
+const faqs = [
+  {
+    q: "Does Coinbase have prediction markets?",
+    a: p.notes,
+  },
+  {
+    q: "Is Coinbase available in the US for prediction market products?",
+    a: p.eligibility.usStatus,
+  },
+  {
+    q: "How does Coinbase compare to Polymarket for crypto prediction markets?",
+    a: "Polymarket is a dedicated prediction market with deep liquidity and a wide range of markets. Coinbase is primarily an exchange. If you want prediction markets specifically, a dedicated platform is generally the better choice.",
+  },
+  {
+    q: "Do I need crypto to use Coinbase prediction markets?",
+    a: "Coinbase supports both fiat and crypto deposits. Verify what the specific prediction market product requires in terms of settlement currency.",
+  },
+];
+---
+
+<Base
+  title="Coinbase Prediction Markets 2026 — What's Available?"
+  description="Does Coinbase have prediction markets? An honest overview of Coinbase's event contract or prediction market products, eligibility, and how it compares to dedicated platforms."
+  path="/platforms/coinbase"
+>
+  <article class="prose wrap">
+    <p class="eyebrow">Platform overview</p>
+    <h1>Coinbase and prediction markets</h1>
+
+    <p class="lede">
+      Coinbase is one of the world's largest crypto exchanges. It has explored event
+      contracts and prediction-market products. This page covers what is currently available
+      and whether it is a serious prediction market destination — or whether you are better
+      served by a dedicated platform.
+    </p>
+
+    <!-- ELIGIBILITY FIRST -->
+    <div class="callout callout--eligibility">
+      <strong>Product availability:</strong> {p.notes}
+      <br /><em>Verify what specific prediction market or event contract product Coinbase currently offers before creating an account for this purpose.</em>
+    </div>
+
+    <h2>Who Coinbase is for in prediction markets</h2>
+    <p>{p.bestFor}</p>
+
+    <h2>Who should skip Coinbase</h2>
+    <p>
+      If your primary goal is prediction market trading, a dedicated platform (Kalshi for
+      US-regulated, Polymarket for global crypto) will have more markets, better liquidity,
+      and features designed for this use case. Coinbase is an exchange first.
+    </p>
+
+    <h2>Key facts</h2>
+    <ul>
+      <li><strong>US availability:</strong> {p.eligibility.usStatus}</li>
+      <li><strong>Regulation:</strong> {p.regulation}</li>
+      <li><strong>Fees:</strong> {p.fees}</li>
+      <li><strong>Minimum deposit:</strong> {p.minDeposit}</li>
+      <li><strong>Funding:</strong> {p.fundingMethods}</li>
+      <li><strong>Affiliate network:</strong> {p.affiliateNetwork}</li>
+    </ul>
+
+    <h2>Get started</h2>
+    <AffiliateCTA platformId="coinbase" showPromo={true} />
+
+    <h2>Frequently asked questions</h2>
+    <FAQSchema faqs={faqs} />
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:2rem;">
+      Educational content only — not financial advice. Verify all product details with
+      Coinbase before depositing.
+      <a href="/risks-and-responsible-trading">Read our risks page →</a>
+    </p>
+
+    <RelatedGuides slug="crypto-prediction-markets-guide" />
+  </article>
+</Base>
+
+<style>
+  .callout--eligibility { background: #eef6f1; border-left-color: var(--forest, #1f6b4f); }
+</style>

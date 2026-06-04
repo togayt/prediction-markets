@@ -3,8 +3,8 @@ import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import ArticleSchema from '../components/ArticleSchema.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
 import Base from './Base.astro';
-import { SITE_URL } from '../config';
 
 type Props = CollectionEntry<'blog'>['data'] & { id: string };
 
@@ -33,6 +33,11 @@ const url = `/blog/${id}/`;
 			</p>
 			<h1>{title}</h1>
 			<slot />
+			<p class="risks-link" style="font-size:0.85rem; color:var(--ink-soft); margin-top:2rem; border-top:1px solid var(--rule,#e5e0d5); padding-top:1rem;">
+				Educational content only — not financial advice. Only trade with money you can afford to lose.
+				<a href="/risks-and-responsible-trading">Risks and responsible trading →</a>
+			</p>
+			<RelatedGuides slug={id} />
 		</div>
 	</article>
 </Base>

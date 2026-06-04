@@ -1,11 +1,15 @@
 ---
 import Base from "../layouts/Base.astro";
 import FAQSchema from "../components/FAQSchema.astro";
+import RelatedGuides from "../components/RelatedGuides.astro";
+import { platformById } from "../data/platforms";
+
+const polymarketEligibility = platformById["polymarket"]!.eligibility.usStatus;
 
 const faqs = [
   {
     q: "Are prediction markets legal?",
-    a: "It depends where you live. In the US, Kalshi operates under CFTC regulation. Polymarket is not available to US persons. Other platforms vary by country. Always check your local rules and the platform's terms before signing up.",
+    a: `It depends where you live. In the US, Kalshi operates under CFTC regulation. Polymarket's US availability: ${polymarketEligibility} Other platforms vary by country. Always check your local rules and the platform's terms before signing up.`,
   },
   {
     q: "Is a prediction market the same as gambling?",
@@ -93,6 +97,8 @@ const faqs = [
     <p style="font-size:0.85rem; color:var(--ink-soft);">
       Educational content only, not financial advice. Trade responsibly and only
       with money you can afford to lose.
+      <a href="/risks-and-responsible-trading">Read our full risks page →</a>
     </p>
+    <RelatedGuides slug="what-is-a-prediction-market-beginners-guide" />
   </article>
 </Base>

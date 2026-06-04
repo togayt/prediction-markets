@@ -1,0 +1,100 @@
+---
+import Base from "../../layouts/Base.astro";
+import FAQSchema from "../../components/FAQSchema.astro";
+import AffiliateCTA from "../../components/AffiliateCTA.astro";
+import RelatedGuides from "../../components/RelatedGuides.astro";
+import { platformById } from "../../data/platforms";
+
+const p = platformById["draftkings"]!;
+
+const faqs = [
+  {
+    q: "Does DraftKings have prediction markets?",
+    a: "DraftKings primarily operates as a sportsbook and daily fantasy platform. It has offered event contract products in addition to standard sports betting. Verify exactly what prediction-market-style products are currently available before signing up for that purpose.",
+  },
+  {
+    q: "Is DraftKings available in my state?",
+    a: p.eligibility.usStatus,
+  },
+  {
+    q: "How does DraftKings compare to Kalshi for sports prediction markets?",
+    a: "Kalshi is a CFTC-regulated prediction market exchange. DraftKings is primarily a sportsbook with potentially broader sports coverage but different regulatory structure. The mechanics, fees, and available markets differ — compare both before choosing.",
+  },
+  {
+    q: "What age do I need to be to use DraftKings?",
+    a: "DraftKings requires users to be 21+ in most states. Check your specific state's requirements on DraftKings' help pages.",
+  },
+];
+---
+
+<Base
+  title="DraftKings Prediction Markets 2026 — Sports Event Contracts"
+  description="DraftKings sportsbook and its prediction market features: what states it's available in, how it compares to Kalshi, and who it's actually for."
+  path="/platforms/draftkings"
+>
+  <article class="prose wrap">
+    <p class="eyebrow">Platform overview</p>
+    <h1>DraftKings and prediction markets</h1>
+
+    <p class="lede">
+      DraftKings is the US sports betting and daily fantasy leader. It offers
+      prediction-market-style event contracts alongside its core sportsbook product.
+      Whether it belongs in your prediction market toolkit depends on where you live and
+      what markets you want to trade.
+    </p>
+
+    <!-- ELIGIBILITY FIRST -->
+    <div class="callout callout--eligibility">
+      <strong>State availability:</strong> {p.eligibility.usStatus}
+      <br />Source: <a href={p.eligibility.source} rel="noopener noreferrer" target="_blank">{p.eligibility.source}</a>
+    </div>
+
+    <h2>Who DraftKings is for</h2>
+    <p>{p.bestFor}</p>
+
+    <h2>Who should skip DraftKings</h2>
+    <p>{p.skipIf}</p>
+    <p>
+      If you are primarily interested in political, economic, or crypto prediction markets
+      (not sports), Kalshi or Polymarket are more appropriate. If you are outside the US,
+      DraftKings is not available to you.
+    </p>
+
+    <h2>Key facts</h2>
+    <ul>
+      <li><strong>Region:</strong> {p.eligibility.regions}</li>
+      <li><strong>Regulation:</strong> {p.regulation}</li>
+      <li><strong>Fees:</strong> {p.fees}</li>
+      <li><strong>Minimum deposit:</strong> {p.minDeposit}</li>
+      <li><strong>Funding methods:</strong> {p.fundingMethods}</li>
+      <li><strong>Withdrawal methods:</strong> {p.withdrawalMethods}</li>
+      <li><strong>Ease of use:</strong> {p.ease}</li>
+    </ul>
+
+    <div class="callout callout--warn">
+      <strong>Promo note.</strong> DraftKings frequently advertises new-user promos that
+      change regularly. We do not list specific promo codes here because they expire quickly
+      and publishing stale codes causes confusion. Check their official promo page for
+      current offers: <a href="https://draftkings.com/promo" rel="nofollow noopener" target="_blank">draftkings.com/promo</a>.
+    </div>
+
+    <h2>Get started</h2>
+    <AffiliateCTA platformId="draftkings" showPromo={true} />
+
+    <h2>Frequently asked questions</h2>
+    <FAQSchema faqs={faqs} />
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:2rem;">
+      Educational content only — not financial or legal advice. Gambling laws vary by state.
+      If you or someone you know has a gambling problem, call 1-800-522-4700.
+      <a href="/risks-and-responsible-trading">Read our responsible trading page →</a>
+    </p>
+
+    <RelatedGuides slug="sports-prediction-markets" />
+  </article>
+</Base>
+
+<style>
+  .callout--eligibility { background: #eef6f1; border-left-color: var(--forest, #1f6b4f); }
+  .callout--warn { background: #fef9ec; border-left-color: #b5641e; }
+</style>

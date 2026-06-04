@@ -1,0 +1,179 @@
+---
+import Base from "../layouts/Base.astro";
+import FAQSchema from "../components/FAQSchema.astro";
+import RelatedGuides from "../components/RelatedGuides.astro";
+
+const title = "Risks and Responsible Trading on Prediction Markets";
+const description =
+  "An honest guide to the risks of prediction market trading: financial, psychological, and legal. What to know before you deposit, and where to get help if gambling becomes a problem.";
+
+const faqs = [
+  {
+    q: "Can I lose all the money I put into a prediction market?",
+    a: "Yes. Every contract can settle at zero. If you buy a 'Yes' contract and the event does not happen, your contract is worth nothing. It is possible to lose your entire deposit if you are consistently wrong or if you trade illiquid markets with wide spreads.",
+  },
+  {
+    q: "Are prediction markets gambling?",
+    a: "Regulated prediction markets like Kalshi are structured as financial event contracts under CFTC oversight — legally distinct from gambling. However, the psychological experience of trading on uncertain outcomes shares features with gambling, and problem-gambling resources apply if you find yourself trading compulsively or beyond your means.",
+  },
+  {
+    q: "What is the biggest risk most beginners underestimate?",
+    a: "Fees and the difficulty of having genuine edge. A 7% round-trip fee means you need to be meaningfully more accurate than the market consensus to break even over time. Most casual traders do not have a systematic edge and lose money in aggregate.",
+  },
+  {
+    q: "What should I do if I think I have a gambling problem?",
+    a: "Contact the National Problem Gambling Helpline (US): 1-800-522-4700, or visit ncpgambling.org. UK: Gamble Aware at begambleaware.org, 0808 8020 133. Many countries have similar resources — search for 'problem gambling helpline' in your country.",
+  },
+  {
+    q: "Are my funds safe if a prediction market platform shuts down?",
+    a: "This depends on the platform's structure. CFTC-regulated platforms like Kalshi are subject to customer fund protection requirements. Crypto-native platforms hold funds in smart contracts; risks differ. Read each platform's terms on fund segregation before depositing meaningful amounts.",
+  },
+  {
+    q: "Is prediction market trading legal where I live?",
+    a: "Legality varies by country and, within the US, by state for some products. This site does not provide legal advice. Research your jurisdiction's rules or consult a lawyer if you are unsure. We flag known restrictions on each platform's page, but those notes can go stale — always verify directly.",
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/risks-and-responsible-trading"
+>
+  <article class="prose wrap">
+    <p class="eyebrow">Important reading</p>
+    <h1>Risks and responsible trading</h1>
+
+    <p class="lede">
+      Prediction markets can be genuinely interesting and, for people with real informational
+      edge, profitable. They can also cause financial harm if approached without a clear
+      understanding of how the odds work. This page lays out the risks plainly.
+    </p>
+
+    <div class="callout callout--warn">
+      <strong>This site is educational — not financial, legal, or tax advice.</strong>
+      Nothing here should be read as a recommendation to trade. The right amount to trade is
+      whatever you can genuinely afford to lose in full.
+    </div>
+
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <h2>Financial risks</h2>
+
+    <h3>You can lose everything you stake</h3>
+    <p>
+      Every prediction market contract settles at either $1 (win) or $0 (lose). There is
+      no partial settlement, no stop-loss, no margin call. If you buy ten contracts at 60
+      cents each ($6 total) and the event does not happen, you lose the full $6. Scaling
+      this up to larger positions means proportionally larger losses.
+    </p>
+
+    <h3>Fees compound against you</h3>
+    <p>
+      Prediction market platforms charge fees on each trade. On a platform with a 7% taker
+      fee, a round-trip trade (buying Yes, then selling Yes before resolution) costs
+      approximately 14% of the notional value. To profit over time, your predictions need
+      to be correct enough to overcome this friction. Most casual traders do not achieve
+      this consistently.
+    </p>
+
+    <h3>Liquidity and spreads</h3>
+    <p>
+      Low-volume markets have wide bid-ask spreads. Buying a contract at 65 cents in a
+      thin market may mean you can only sell it at 55 cents — a 10-cent loss before the
+      event even resolves. Stick to high-volume, widely-traded markets if you are new.
+    </p>
+
+    <h3>Resolution risk</h3>
+    <p>
+      Markets are resolved by an oracle or a rules document, not by you. Read the resolution
+      criteria before trading. Edge cases exist: a market that seems obvious to you may
+      resolve differently based on the written rules. Disputed resolutions can delay or
+      complicate payouts.
+    </p>
+
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <h2>Psychological risks</h2>
+
+    <h3>Overconfidence in your own knowledge</h3>
+    <p>
+      Prediction markets aggregate the views of many informed participants. The price you
+      see already incorporates substantial information. Assuming your personal knowledge of
+      an event is better than the collective crowd requires evidence, not just confidence.
+    </p>
+
+    <h3>Chasing losses</h3>
+    <p>
+      Taking larger positions to recover previous losses is a well-documented cognitive trap.
+      The market does not care about your previous trades. If you notice yourself increasing
+      bet sizes after a losing run, treat that as a warning sign and stop trading for a period.
+    </p>
+
+    <h3>Prediction markets and problem gambling</h3>
+    <p>
+      The structure of prediction markets — variable outcomes, real money, rapid feedback —
+      shares features with gambling products that are associated with compulsive behavior.
+      Even though regulated markets are legally classified as financial instruments rather
+      than gambling, the psychological risks are similar.
+    </p>
+    <p>
+      Warning signs: trading more than you planned to; trading money you need for essentials;
+      lying to others about your trading activity; inability to stop when you decide to.
+    </p>
+
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <h2>Help and resources</h2>
+
+    <ul>
+      <li>
+        <strong>US — National Problem Gambling Helpline:</strong> 1-800-522-4700, 24/7.
+        <a href="https://www.ncpgambling.org" rel="noopener noreferrer" target="_blank">ncpgambling.org</a>
+      </li>
+      <li>
+        <strong>UK — GambleAware:</strong> 0808 802 0133.
+        <a href="https://www.begambleaware.org" rel="noopener noreferrer" target="_blank">begambleaware.org</a>
+      </li>
+      <li>
+        <strong>Canada — ConnexOntario:</strong> 1-866-531-2600.
+        <a href="https://www.connexontario.ca" rel="noopener noreferrer" target="_blank">connexontario.ca</a>
+      </li>
+      <li>
+        <strong>Australia — Gambling Help Online:</strong> 1800 858 858.
+        <a href="https://www.gamblinghelponline.org.au" rel="noopener noreferrer" target="_blank">gamblinghelponline.org.au</a>
+      </li>
+      <li>
+        Search "problem gambling helpline" for your country to find a local resource.
+      </li>
+    </ul>
+
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <h2>Practical guidelines before you trade</h2>
+    <ol>
+      <li><strong>Only trade money you can afford to lose in full.</strong> Not "probably" lose — fully lose.</li>
+      <li><strong>Set a hard budget before you deposit</strong> — and treat it as already spent.</li>
+      <li><strong>Verify you are legally eligible</strong> in your country before signing up to any platform.</li>
+      <li><strong>Read the resolution criteria</strong> on every market before you trade it.</li>
+      <li><strong>Start with small positions</strong> to learn the mechanics before scaling up.</li>
+      <li><strong>Track your trades.</strong> Most people who believe they are profitable are not, once fees are included. Keep a log.</li>
+      <li><strong>Take breaks.</strong> If you find yourself checking prices compulsively or losing sleep over positions, step back.</li>
+    </ol>
+
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <h2>Frequently asked questions</h2>
+    <FAQSchema faqs={faqs} />
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:2rem;">
+      This page is for informational purposes only. It does not constitute financial,
+      legal, or professional advice. Laws governing prediction market trading vary by
+      jurisdiction and change over time.
+    </p>
+
+    <RelatedGuides slug="risks-and-responsible-trading" />
+  </article>
+</Base>
+
+<style>
+  .callout--warn {
+    background: #fef9ec;
+    border-left-color: #b5641e;
+  }
+</style>

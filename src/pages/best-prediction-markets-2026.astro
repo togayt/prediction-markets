@@ -1,0 +1,246 @@
+---
+import Base from "../layouts/Base.astro";
+import FAQSchema from "../components/FAQSchema.astro";
+import AffiliateCTA from "../components/AffiliateCTA.astro";
+import RelatedGuides from "../components/RelatedGuides.astro";
+import { platforms } from "../data/platforms";
+
+const title = "Best Prediction Markets 2026: Ranked and Reviewed";
+const description =
+  "The top prediction market platforms of 2026, ranked by regulation, ease of use, market depth, and availability — with honest takes on who each platform is actually for.";
+
+const faqs = [
+  {
+    q: "What is the best prediction market platform in 2026?",
+    a: "It depends on where you live and your comfort with crypto. For US residents, Kalshi is the only fully regulated, USD-funded option. Outside the US and comfortable with crypto, Polymarket offers the widest market selection and highest liquidity. The 'best' platform is the one that is available in your jurisdiction and matches your technical comfort level.",
+  },
+  {
+    q: "Are prediction markets legal in the US?",
+    a: "Yes, with caveats. Kalshi is CFTC-regulated and available to US residents. Polymarket's US status should be verified before you trade (see note in the Polymarket section). Robinhood and PredictIt also have US-facing products — check their current regulatory status.",
+  },
+  {
+    q: "Can you make real money on prediction markets?",
+    a: "Yes, but it requires genuine informational edge and the ability to identify mispriced probabilities. Most casual traders lose money over time, largely due to fees and the difficulty of consistently outpredicting the crowd. Treat any capital you put in as money you are willing to lose.",
+  },
+  {
+    q: "Which prediction market has the lowest fees?",
+    a: "Fee structures vary and change. Manifold is free (play money only). For real-money platforms, verify current fee schedules directly on each platform — we link to official fee pages in each review.",
+  },
+  {
+    q: "Is there a prediction market that doesn't require crypto?",
+    a: "Yes. Kalshi, Robinhood, PredictIt, and DraftKings all offer USD-funded markets for US residents. No crypto wallet or stablecoin is required.",
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/best-prediction-markets-2026"
+>
+  <article class="prose wrap">
+    <p class="eyebrow">Roundup · 2026</p>
+    <h1>Best prediction markets 2026</h1>
+
+    <p class="lede">
+      The best prediction market is the one that is legal where you live, charges fees you
+      can trade around, and offers markets you actually care about. This page ranks eight
+      platforms on those criteria — and tells you which ones to skip.
+    </p>
+
+    <div class="callout">
+      <strong>Before you read the rankings:</strong> Platform availability is the first
+      filter. If you are a US resident, Polymarket may or may not be available to you
+      (see the Polymarket section below). Always verify your eligibility before depositing.
+    </div>
+
+    <!-- ──────────────────────────────────────────────────────────────────── -->
+    <h2>Quick-pick by situation</h2>
+    <ul>
+      <li><strong>US resident, want regulated + easy:</strong> Kalshi</li>
+      <li><strong>US resident, want more market variety:</strong> Kalshi (primary) + check Robinhood</li>
+      <li><strong>Outside the US, comfortable with crypto:</strong> Polymarket</li>
+      <li><strong>Already on Crypto.com:</strong> Crypto.com Predict</li>
+      <li><strong>Want to learn with zero risk:</strong> Manifold (play money only)</li>
+      <li><strong>US sports bettor who wants event contracts:</strong> DraftKings (verify state availability)</li>
+      <li><strong>Political markets only (US):</strong> PredictIt (verify current legal status)</li>
+    </ul>
+
+    <!-- ──────────────────────────────────────────────────────────────────── -->
+    <h2>Platform rankings</h2>
+
+    <!-- KALSHI -->
+    <div class="platform-card">
+      <h3><span class="rank">#1</span> Kalshi — Best for US residents</h3>
+      <p>
+        Kalshi is the only CFTC-regulated prediction market exchange for US residents.
+        You fund it with dollars (bank transfer or debit card), trade in USD, and withdraw
+        in USD. No crypto required. The UI is beginner-friendly and the market selection
+        spans economics, politics, weather, and sports.
+      </p>
+      <p><strong>Who it's for:</strong> {platforms.find(p => p.id === 'kalshi')!.bestFor}</p>
+      <p><strong>Skip if:</strong> {platforms.find(p => p.id === 'kalshi')!.skipIf}</p>
+      <p><strong>Fees:</strong> {platforms.find(p => p.id === 'kalshi')!.fees}</p>
+      <p><strong>Ease:</strong> {platforms.find(p => p.id === 'kalshi')!.ease}</p>
+      <AffiliateCTA platformId="kalshi" />
+      <p><a href="/blog/kalshi-review">Read our full Kalshi review →</a></p>
+    </div>
+
+    <!-- POLYMARKET -->
+    <div class="platform-card">
+      <h3><span class="rank">#2</span> Polymarket — Best global market selection</h3>
+      <p>
+        Polymarket is the largest prediction market by global trading volume. It offers the
+        widest range of markets — politics, crypto, economics, science, sports — and tight
+        spreads on high-liquidity events. It runs on the Polygon blockchain and settles in USDC.
+      </p>
+      <div class="callout callout--warn">
+        <strong>US eligibility note:</strong> {platforms.find(p => p.id === 'polymarket')!.eligibility.usStatus}
+      </div>
+      <p><strong>Who it's for:</strong> {platforms.find(p => p.id === 'polymarket')!.bestFor}</p>
+      <p><strong>Skip if:</strong> {platforms.find(p => p.id === 'polymarket')!.skipIf}</p>
+      <p><strong>Fees:</strong> {platforms.find(p => p.id === 'polymarket')!.fees}</p>
+      <p><strong>Ease:</strong> {platforms.find(p => p.id === 'polymarket')!.ease}</p>
+      <AffiliateCTA platformId="polymarket" />
+      <p><a href="/blog/polymarket-review">Read our full Polymarket review →</a></p>
+    </div>
+
+    <!-- MANIFOLD -->
+    <div class="platform-card">
+      <h3><span class="rank">#3</span> Manifold — Best for learning (free)</h3>
+      <p>
+        Manifold uses play money (Mana, M$) with no real-cash value. It is completely free,
+        globally available, and has thousands of community-created markets on almost any topic
+        imaginable. It is the best way to learn prediction market mechanics without any
+        financial risk.
+      </p>
+      <p><strong>Who it's for:</strong> {platforms.find(p => p.id === 'manifold')!.bestFor}</p>
+      <p><strong>Skip if:</strong> {platforms.find(p => p.id === 'manifold')!.skipIf}</p>
+      <p><strong>Cost:</strong> Free</p>
+      <AffiliateCTA platformId="manifold" label="Try Manifold (free)" />
+      <p><a href="/platforms/manifold">Read our Manifold overview →</a></p>
+    </div>
+
+    <!-- ROBINHOOD -->
+    <div class="platform-card">
+      <h3><span class="rank">#4</span> Robinhood — Best for existing Robinhood users</h3>
+      <p>
+        Robinhood added CFTC-regulated event contracts, allowing US users to trade on
+        macro and political outcomes within their existing brokerage account. The lowest
+        barrier if you already have a Robinhood account.
+      </p>
+      <p><strong>Who it's for:</strong> {platforms.find(p => p.id === 'robinhood')!.bestFor}</p>
+      <p><strong>Skip if:</strong> {platforms.find(p => p.id === 'robinhood')!.skipIf}</p>
+      <p><strong>Regulation:</strong> {platforms.find(p => p.id === 'robinhood')!.regulation}</p>
+      <AffiliateCTA platformId="robinhood" />
+      <p><a href="/platforms/robinhood">Read our Robinhood event contracts overview →</a></p>
+    </div>
+
+    <!-- CRYPTO.COM -->
+    <div class="platform-card">
+      <h3><span class="rank">#5</span> Crypto.com Predict — Best for existing Crypto.com users</h3>
+      <p>
+        Crypto.com Predict is a prediction markets product within the Crypto.com ecosystem.
+        Convenient if you already trade on Crypto.com; less compelling as a standalone choice.
+        Availability varies by country.
+      </p>
+      <p><strong>Who it's for:</strong> {platforms.find(p => p.id === 'crypto-com')!.bestFor}</p>
+      <p><strong>Skip if:</strong> {platforms.find(p => p.id === 'crypto-com')!.skipIf}</p>
+      <AffiliateCTA platformId="crypto-com" />
+      <p><a href="/blog/crypto-com-predict-review">Read our Crypto.com review →</a></p>
+    </div>
+
+    <!-- PREDICTIT -->
+    <div class="platform-card">
+      <h3><span class="rank">#6</span> PredictIt — Political markets for US traders</h3>
+      <p>
+        PredictIt focuses on US political event markets with small position limits. It has
+        had regulatory challenges — verify current operating status before trading.
+      </p>
+      <div class="callout callout--warn">
+        <strong>Status note:</strong> {platforms.find(p => p.id === 'predictit')!.eligibility.usStatus}
+      </div>
+      <p><strong>Who it's for:</strong> {platforms.find(p => p.id === 'predictit')!.bestFor}</p>
+      <p><strong>Skip if:</strong> {platforms.find(p => p.id === 'predictit')!.skipIf}</p>
+      <AffiliateCTA platformId="predictit" label="Check PredictIt" />
+      <p><a href="/platforms/predictit">Read our PredictIt overview →</a></p>
+    </div>
+
+    <!-- DRAFTKINGS -->
+    <div class="platform-card">
+      <h3><span class="rank">#7</span> DraftKings — Sports-focused, US state-by-state</h3>
+      <p>
+        DraftKings is primarily a sportsbook and daily fantasy platform. It offers
+        prediction-market-style event contracts in addition to standard sports betting.
+        Available in US states where DraftKings is licensed — check your state.
+      </p>
+      <p><strong>Who it's for:</strong> {platforms.find(p => p.id === 'draftkings')!.bestFor}</p>
+      <p><strong>Skip if:</strong> {platforms.find(p => p.id === 'draftkings')!.skipIf}</p>
+      <AffiliateCTA platformId="draftkings" />
+      <p><a href="/platforms/draftkings">Read our DraftKings overview →</a></p>
+    </div>
+
+    <!-- COINBASE -->
+    <div class="platform-card">
+      <h3><span class="rank">#8</span> Coinbase — Crypto-native, verify product availability</h3>
+      <p>
+        Coinbase has discussed prediction market or event contract products. Verify exactly
+        what is available before signing up for this reason specifically.
+      </p>
+      <p><strong>Who it's for:</strong> {platforms.find(p => p.id === 'coinbase')!.bestFor}</p>
+      <p><strong>Skip if:</strong> {platforms.find(p => p.id === 'coinbase')!.skipIf}</p>
+      <AffiliateCTA platformId="coinbase" />
+      <p><a href="/platforms/coinbase">Read our Coinbase overview →</a></p>
+    </div>
+
+    <!-- ──────────────────────────────────────────────────────────────────── -->
+    <h2>Frequently asked questions</h2>
+    <FAQSchema faqs={faqs} />
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:2rem;">
+      Educational content only — not financial or legal advice. Platform availability
+      and fees change; verify directly with each platform before trading.
+      Only trade with money you can afford to lose.
+      <a href="/risks-and-responsible-trading">Read our full risks page →</a>
+    </p>
+
+    <RelatedGuides slug="best-prediction-markets-2026" />
+  </article>
+</Base>
+
+<style>
+  .platform-card {
+    border: 1px solid var(--rule, #e5e0d5);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--white, #fff);
+  }
+
+  .platform-card h3 {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .rank {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: var(--forest, #1f6b4f);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-family: var(--font-mono, monospace);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .callout--warn {
+    background: #fef9ec;
+    border-left-color: #b5641e;
+  }
+</style>

@@ -1,0 +1,117 @@
+---
+import Base from "../../layouts/Base.astro";
+import FAQSchema from "../../components/FAQSchema.astro";
+import AffiliateCTA from "../../components/AffiliateCTA.astro";
+import RelatedGuides from "../../components/RelatedGuides.astro";
+import { platformById } from "../../data/platforms";
+
+const p = platformById["manifold"]!;
+
+const faqs = [
+  {
+    q: "Is Manifold free to use?",
+    a: "Yes. Manifold uses Mana (M$), a play-money currency with no real-cash value. You start with a free balance and can create or trade any market without depositing real money.",
+  },
+  {
+    q: "Can you win real money on Manifold?",
+    a: "No. Mana (M$) is play money only. It cannot be converted to cash. The platform is for learning and entertainment, not financial gain.",
+  },
+  {
+    q: "Is Manifold available in the US?",
+    a: "Yes. Because no real money is involved, Manifold is available globally without geographic restrictions.",
+  },
+  {
+    q: "What can I use Manifold for?",
+    a: "Learning how prediction markets work before risking real money; experimenting with market creation; academic research on forecasting; following community predictions on niche topics.",
+  },
+  {
+    q: "How does Manifold compare to Kalshi or Polymarket?",
+    a: "Manifold is play-money only. Kalshi and Polymarket involve real money and real financial risk. Use Manifold to learn the mechanics; use Kalshi or Polymarket when you are ready to trade with real funds and have verified your eligibility.",
+  },
+];
+---
+
+<Base
+  title="Manifold Markets Review 2026 — Free Play-Money Prediction Markets"
+  description="Manifold is the best way to learn prediction market mechanics for free — no real money, no geographic restrictions. Here's what it is and who it's for."
+  path="/platforms/manifold"
+>
+  <article class="prose wrap">
+    <p class="eyebrow">Platform overview</p>
+    <h1>Manifold Markets: learn prediction markets for free</h1>
+
+    <p class="lede">
+      Manifold is a play-money prediction market. You cannot win or lose real money.
+      That makes it the best starting point for anyone who wants to understand how
+      prediction markets work before committing real funds.
+    </p>
+
+    <div class="callout callout--eligibility">
+      <strong>No money involved.</strong> Manifold uses Mana (M$), a play-money currency
+      with zero cash value. There are no geographic restrictions. Anyone can sign up for free.
+    </div>
+
+    <h2>What Manifold is good for</h2>
+    <ul>
+      <li>Learning the mechanics of prediction markets with zero financial risk</li>
+      <li>Experimenting with market creation and resolution</li>
+      <li>Practicing probability estimation before you trade real money</li>
+      <li>Following community forecasts on niche topics not covered by commercial platforms</li>
+      <li>Academic and research contexts</li>
+    </ul>
+
+    <h2>Who Manifold is for</h2>
+    <p>{p.bestFor}</p>
+
+    <h2>Who should skip Manifold</h2>
+    <p>{p.skipIf}</p>
+    <p>
+      If you have already decided you want to trade with real money, go directly to a
+      commercial platform. For US residents, that means Kalshi. Outside the US (with
+      crypto comfort), that means Polymarket.
+    </p>
+
+    <h2>Key facts</h2>
+    <ul>
+      <li><strong>Cost:</strong> Free</li>
+      <li><strong>Currency:</strong> {p.currency}</li>
+      <li><strong>Regulation:</strong> {p.regulation}</li>
+      <li><strong>Minimum deposit:</strong> {p.minDeposit}</li>
+      <li><strong>Eligibility:</strong> {p.eligibility.details}</li>
+      <li><strong>Mobile app:</strong> {p.mobileApp.notes}</li>
+    </ul>
+
+    <h2>The honest limitation</h2>
+    <p>
+      Play-money prediction markets behave somewhat differently from real-money markets.
+      Without financial consequences, some participants take larger or more arbitrary
+      positions than they would with real money. The calibration of play-money markets may
+      be lower quality than high-volume real-money markets on Kalshi or Polymarket. Use
+      Manifold to learn the interface and mechanics — not as a perfect simulator of
+      real-money market dynamics.
+    </p>
+
+    <h2>Get started</h2>
+    <AffiliateCTA platformId="manifold" label="Try Manifold (free)" />
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:0.5rem;">
+      No affiliate relationship — we do not earn anything from Manifold signups.
+      We include it because it is genuinely useful for learning.
+    </p>
+
+    <h2>Frequently asked questions</h2>
+    <FAQSchema faqs={faqs} />
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:2rem;">
+      Once you are comfortable with the mechanics and ready to trade real money,
+      read our <a href="/what-is-a-prediction-market">platform overview</a> or
+      <a href="/compare">compare your options</a>.
+      <a href="/risks-and-responsible-trading">Risks and responsible trading →</a>
+    </p>
+
+    <RelatedGuides slug="what-is-a-prediction-market-beginners-guide" />
+  </article>
+</Base>
+
+<style>
+  .callout--eligibility { background: #eef6f1; border-left-color: var(--forest, #1f6b4f); }
+</style>

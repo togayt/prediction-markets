@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import Cta from "../../components/Cta.astro";
+import RelatedGuides from "../../components/RelatedGuides.astro";
 import { platforms } from "../../config";
 const kalshi = platforms.find((p) => p.id === "kalshi")!;
 
@@ -68,6 +69,8 @@ const howToSchema = {
     <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:1.5rem;">
       Educational content only, not financial advice. Only trade with money you can
       afford to lose. Availability and rules depend on your location and age.
+      <a href="/risks-and-responsible-trading">Risks and responsible trading →</a>
     </p>
+    <RelatedGuides slug="kalshi-review" />
   </article>
 </Base>
