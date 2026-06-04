@@ -44,7 +44,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 					<article class="platform-card">
 						<h3>Kalshi</h3>
 						<p><strong>Best for:</strong> US users who want a regulated, mainstream platform.</p>
-						<a class="button-platform" href="#">Visit Kalshi</a><!-- TODO: replace with affiliate link -->
+						<a class="button-secondary" href="/blog/kalshi-review">Read our review →</a>
+						<a class="button-platform" href="https://kalshi.com" target="_blank" rel="noopener">Visit Kalshi</a>
 					</article>
 					<article class="platform-card">
 						<h3>Polymarket</h3>
@@ -52,7 +53,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 							<strong>Best for:</strong> crypto-comfortable users outside the US who want the largest,
 							best-known markets.
 						</p>
-						<a class="button-platform" href="#">Visit Polymarket</a><!-- TODO: replace with affiliate link -->
+						<a class="button-secondary" href="/blog/polymarket-review">Read our review →</a>
+						<a class="button-platform" href="https://polymarket.com" target="_blank" rel="noopener">Visit Polymarket</a>
 					</article>
 					<article class="platform-card">
 						<h3>Crypto.com</h3>
@@ -60,7 +62,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 							<strong>Best for:</strong> people already in crypto who want prediction markets alongside an
 							exchange.
 						</p>
-						<a class="button-platform" href="#">Visit Crypto.com</a><!-- TODO: replace with affiliate link -->
+						<a class="button-secondary" href="/blog/crypto-com-predict-review">Read our review →</a>
+						<a class="button-platform" href="https://crypto.com/predict" target="_blank" rel="noopener">Visit Crypto.com</a>
 					</article>
 				</div>
 				<p class="compare-note">
@@ -136,8 +139,20 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	}
 
 	.platform-card p {
-		margin-bottom: 1.25em;
+		margin-bottom: 0.75em;
 		font-size: 0.95em;
+	}
+
+	.button-secondary {
+		display: block;
+		font-size: 0.9em;
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		margin-bottom: 0.75em;
+	}
+
+	.button-secondary:hover {
+		color: var(--accent);
 	}
 
 	.button-platform {
