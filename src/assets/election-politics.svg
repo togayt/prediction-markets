@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1923"/>
+      <stop offset="100%" style="stop-color:#1c2e3d"/>
+    </linearGradient>
+    <linearGradient id="barA" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="barB" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="barG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f6b4f"/>
+      <stop offset="100%" style="stop-color:#0f3d2a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="480" fill="url(#bg)"/>
+  <!-- Background map dots (stylised) -->
+  <g fill="#ffffff" opacity="0.04">
+    <rect x="50" y="100" width="300" height="250" rx="8"/>
+    <rect x="900" y="80" width="250" height="280" rx="8"/>
+  </g>
+  <!-- Probability bars - main chart -->
+  <rect x="200" y="380" width="800" height="2" fill="#ffffff" opacity="0.1"/>
+  <!-- Candidate A bar -->
+  <rect x="250" y="180" width="140" height="200" rx="6" fill="url(#barA)" opacity="0.85"/>
+  <text x="320" y="170" font-family="Georgia,serif" font-size="28" fill="#3b82f6" text-anchor="middle" font-weight="bold">62%</text>
+  <text x="320" y="400" font-family="sans-serif" font-size="14" fill="#ffffff" opacity="0.6" text-anchor="middle">Candidate A</text>
+  <!-- Candidate B bar -->
+  <rect x="530" y="230" width="140" height="150" rx="6" fill="url(#barB)" opacity="0.85"/>
+  <text x="600" y="220" font-family="Georgia,serif" font-size="28" fill="#ef4444" text-anchor="middle" font-weight="bold">31%</text>
+  <text x="600" y="400" font-family="sans-serif" font-size="14" fill="#ffffff" opacity="0.6" text-anchor="middle">Candidate B</text>
+  <!-- Other bar -->
+  <rect x="810" y="342" width="140" height="38" rx="6" fill="url(#barG)" opacity="0.7"/>
+  <text x="880" y="332" font-family="Georgia,serif" font-size="24" fill="#4ecca3" text-anchor="middle" font-weight="bold">7%</text>
+  <text x="880" y="400" font-family="sans-serif" font-size="14" fill="#ffffff" opacity="0.6" text-anchor="middle">Field / Other</text>
+  <!-- Title -->
+  <text x="600" y="60" font-family="Georgia,serif" font-size="18" fill="#ffffff" opacity="0.5" text-anchor="middle" letter-spacing="3">PREDICTION MARKET ODDS</text>
+  <!-- Live indicator -->
+  <circle cx="1100" cy="55" r="7" fill="#ef4444" opacity="0.9"/>
+  <text x="1115" y="60" font-family="monospace" font-size="13" fill="#ef4444">LIVE</text>
+  <!-- Price line overlay -->
+  <path d="M250 290 L390 290 L390 230 L530 230 L530 310 L670 310 L670 340 L810 340 L810 360 L950 360" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,4" opacity="0.15"/>
+</svg>

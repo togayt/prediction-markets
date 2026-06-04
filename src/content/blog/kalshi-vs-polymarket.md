@@ -2,7 +2,7 @@
 title: 'Kalshi vs Polymarket: Which Prediction Market Is Right for You?'
 description: 'A direct comparison of Kalshi and Polymarket: regulation, markets, fees, funding, and who each platform actually suits.'
 pubDate: 'Aug 07 2025'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/comparison-chart.svg'
 ---
 
 Kalshi and Polymarket are the two most talked-about prediction markets right now. They approach the space in completely different ways, and the right one for you depends almost entirely on where you live and whether you hold crypto.

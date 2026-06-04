@@ -2,7 +2,7 @@
 title: 'Crypto Prediction Markets: Trading Bitcoin, ETFs, and Blockchain Events'
 description: 'How prediction markets cover crypto events: Bitcoin price milestones, ETF decisions, protocol launches: and which platforms offer the best crypto markets.'
 pubDate: 'Feb 20 2026'
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/crypto-defi.svg'
 ---
 
 Prediction markets and crypto have a natural overlap. Many of the most liquid markets on Polymarket and Crypto.com revolve around crypto events: Bitcoin price targets, ETF approvals, protocol upgrade dates, and exchange collapses. Here is what you need to know about this category.

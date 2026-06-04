@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0f1e"/>
+      <stop offset="100%" style="stop-color:#151b35"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <!-- App mockup frame -->
+  <rect x="50" y="40" width="200" height="320" rx="20" fill="#111827" stroke="#1f2937" stroke-width="2"/>
+  <rect x="62" y="60" width="176" height="290" rx="6" fill="#0d1117"/>
+  <!-- App header -->
+  <rect x="62" y="60" width="176" height="40" rx="6" fill="#1f2937"/>
+  <text x="150" y="86" text-anchor="middle" fill="#f9fafb" font-family="sans-serif" font-size="13" font-weight="bold">Crypto.com</text>
+  <!-- Market row 1 -->
+  <rect x="68" y="108" width="164" height="40" rx="5" fill="#1a2234" opacity="0.8"/>
+  <text x="82" y="125" fill="#e2e8f0" font-family="sans-serif" font-size="11" font-weight="bold">Bitcoin above $100k?</text>
+  <text x="82" y="141" fill="#64748b" font-family="monospace" font-size="10">YES 58¢ / NO 42¢</text>
+  <!-- Market row 2 -->
+  <rect x="68" y="155" width="164" height="40" rx="5" fill="#1a2234" opacity="0.6"/>
+  <text x="82" y="172" fill="#e2e8f0" font-family="sans-serif" font-size="11" font-weight="bold">ETH merge v2 by Q4?</text>
+  <text x="82" y="188" fill="#64748b" font-family="monospace" font-size="10">YES 31¢ / NO 69¢</text>
+  <!-- Market row 3 -->
+  <rect x="68" y="202" width="164" height="40" rx="5" fill="#1a2234" opacity="0.8"/>
+  <text x="82" y="219" fill="#e2e8f0" font-family="sans-serif" font-size="11" font-weight="bold">Fed rate cut Sept?</text>
+  <text x="82" y="235" fill="#64748b" font-family="monospace" font-size="10">YES 72¢ / NO 28¢</text>
+  <!-- Balance -->
+  <rect x="68" y="300" width="164" height="44" rx="5" fill="#0a1628"/>
+  <text x="150" y="319" text-anchor="middle" fill="#475569" font-family="monospace" font-size="10">BALANCE</text>
+  <text x="150" y="337" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="16" font-weight="bold">$250.00</text>
+  <!-- Info cards right -->
+  <text x="320" y="72" fill="#e2e8f0" font-family="sans-serif" font-size="18" font-weight="bold">Crypto.com Predict</text>
+  <text x="320" y="92" fill="#64748b" font-family="sans-serif" font-size="13">Prediction markets with CRO rewards</text>
+  <!-- Feature cards -->
+  <rect x="310" y="115" width="200" height="60" rx="8" fill="#1a2234" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="330" y="140" fill="#38bdf8" font-family="sans-serif" font-size="13" font-weight="bold">CRO Rewards</text>
+  <text x="330" y="158" fill="#64748b" font-family="sans-serif" font-size="12">Earn staking bonuses</text>
+  <rect x="520" y="115" width="200" height="60" rx="8" fill="#1a2234" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="540" y="140" fill="#a78bfa" font-family="sans-serif" font-size="13" font-weight="bold">Global Markets</text>
+  <text x="540" y="158" fill="#64748b" font-family="sans-serif" font-size="12">100+ active markets</text>
+  <rect x="310" y="190" width="200" height="60" rx="8" fill="#1a2234" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="330" y="215" fill="#34d399" font-family="sans-serif" font-size="13" font-weight="bold">Low fees</text>
+  <text x="330" y="233" fill="#64748b" font-family="sans-serif" font-size="12">~2-3% per trade</text>
+  <rect x="520" y="190" width="200" height="60" rx="8" fill="#1a2234" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="540" y="215" fill="#fbbf24" font-family="sans-serif" font-size="13" font-weight="bold">Mobile First</text>
+  <text x="540" y="233" fill="#64748b" font-family="sans-serif" font-size="12">iOS and Android apps</text>
+  <!-- Rating -->
+  <rect x="310" y="270" width="410" height="60" rx="8" fill="#0f2a1a" stroke="#14532d" stroke-width="1"/>
+  <text x="515" y="297" text-anchor="middle" fill="#22c55e" font-family="sans-serif" font-size="14" font-weight="bold">Best for: crypto-native traders</text>
+  <text x="515" y="318" text-anchor="middle" fill="#475569" font-family="sans-serif" font-size="12">Already have CRO? This is your platform.</text>
+  <text x="150" y="385" text-anchor="middle" fill="#475569" font-family="monospace" font-size="11">PLATFORM REVIEW</text>
+</svg>

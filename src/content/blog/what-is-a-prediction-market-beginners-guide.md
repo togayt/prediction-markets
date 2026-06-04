@@ -2,7 +2,7 @@
 title: "What is a Prediction Market? A Beginner's Guide"
 description: "A plain-English introduction to prediction markets: how they work, what you can trade, legality and safety basics, and how to get started."
 pubDate: 'May 01 2025'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/prediction-market-intro.svg'
 ---
 
 A **prediction market** is a marketplace where people buy and sell contracts tied to whether a specific real-world event will happen. Prices on each outcome reflect what traders collectively believe is likely: so the market acts as a live, crowd-sourced forecast rather than a single expert’s opinion.

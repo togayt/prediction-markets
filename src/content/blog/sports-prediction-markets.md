@@ -2,7 +2,7 @@
 title: 'Sports Prediction Markets: How They Work and Where to Trade'
 description: 'How sports prediction markets differ from traditional sports betting, which platforms offer them, and what to know before placing a trade on a sports outcome.'
 pubDate: 'Nov 13 2025'
-heroImage: '../../assets/blog-placeholder-4.jpg'
+heroImage: '../../assets/sports-stadium.svg'
 ---
 
 Sports are one of the most popular categories on prediction markets. If you have ever used a sportsbook, you will find sports prediction markets familiar: but there are meaningful differences worth understanding before you trade.

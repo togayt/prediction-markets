@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+    <linearGradient id="stepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <!-- Title -->
+  <text x="400" y="50" text-anchor="middle" fill="#e2e8f0" font-family="sans-serif" font-size="20" font-weight="bold">Getting Started on Polymarket</text>
+  <!-- Step connector line -->
+  <line x1="70" y1="120" x2="70" y2="320" stroke="#1e3a5f" stroke-width="2"/>
+  <!-- Steps -->
+  <!-- Step 1 -->
+  <circle cx="70" cy="120" r="20" fill="url(#stepGrad)"/>
+  <text x="70" y="126" text-anchor="middle" fill="white" font-family="monospace" font-size="14" font-weight="bold">1</text>
+  <text x="105" y="115" fill="#38bdf8" font-family="sans-serif" font-size="14" font-weight="bold">Get a wallet</text>
+  <text x="105" y="132" fill="#64748b" font-family="sans-serif" font-size="12">Use Polymarket's built-in embedded wallet</text>
+  <!-- Step 2 -->
+  <circle cx="70" cy="180" r="20" fill="url(#stepGrad)"/>
+  <text x="70" y="186" text-anchor="middle" fill="white" font-family="monospace" font-size="14" font-weight="bold">2</text>
+  <text x="105" y="175" fill="#38bdf8" font-family="sans-serif" font-size="14" font-weight="bold">Create account</text>
+  <text x="105" y="192" fill="#64748b" font-family="sans-serif" font-size="12">Sign up with email or Google</text>
+  <!-- Step 3 -->
+  <circle cx="70" cy="240" r="20" fill="url(#stepGrad)"/>
+  <text x="70" y="246" text-anchor="middle" fill="white" font-family="monospace" font-size="14" font-weight="bold">3</text>
+  <text x="105" y="235" fill="#38bdf8" font-family="sans-serif" font-size="14" font-weight="bold">Get USDC</text>
+  <text x="105" y="252" fill="#64748b" font-family="sans-serif" font-size="12">Buy on Coinbase, bridge to Polygon</text>
+  <!-- Step 4 -->
+  <circle cx="70" cy="300" r="20" fill="url(#stepGrad)"/>
+  <text x="70" y="306" text-anchor="middle" fill="white" font-family="monospace" font-size="14" font-weight="bold">4</text>
+  <text x="105" y="295" fill="#38bdf8" font-family="sans-serif" font-size="14" font-weight="bold">Place first trade</text>
+  <text x="105" y="312" fill="#64748b" font-family="sans-serif" font-size="12">Choose YES or NO, enter amount, confirm</text>
+  <!-- Market card (right) -->
+  <rect x="420" y="80" width="340" height="240" rx="12" fill="#0f2a3a" stroke="#1e4a6a" stroke-width="1"/>
+  <text x="590" y="115" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="13" font-weight="bold">Will ECB cut rates in July?</text>
+  <line x1="440" y1="128" x2="740" y2="128" stroke="#1e4a6a" stroke-width="1"/>
+  <!-- Yes/No buttons -->
+  <rect x="445" y="145" width="130" height="50" rx="8" fill="#064e3b"/>
+  <text x="510" y="168" text-anchor="middle" fill="#34d399" font-family="sans-serif" font-size="16" font-weight="bold">YES</text>
+  <text x="510" y="186" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="13">64¢</text>
+  <rect x="585" y="145" width="130" height="50" rx="8" fill="#4c0519"/>
+  <text x="650" y="168" text-anchor="middle" fill="#fb7185" font-family="sans-serif" font-size="16" font-weight="bold">NO</text>
+  <text x="650" y="186" text-anchor="middle" fill="#f43f5e" font-family="monospace" font-size="13">36¢</text>
+  <!-- Volume -->
+  <text x="590" y="225" text-anchor="middle" fill="#475569" font-family="monospace" font-size="11">Vol: $2.4M</text>
+  <!-- Progress bar -->
+  <rect x="445" y="238" width="270" height="10" rx="5" fill="#4c0519"/>
+  <rect x="445" y="238" width="173" height="10" rx="5" fill="#10b981"/>
+  <!-- Resolves label -->
+  <text x="590" y="278" text-anchor="middle" fill="#475569" font-family="monospace" font-size="11">Resolves: Jul 31, 2026</text>
+  <text x="590" y="295" text-anchor="middle" fill="#475569" font-family="monospace" font-size="11">Source: ECB press release</text>
+  <!-- US warning -->
+  <rect x="420" y="340" width="340" height="30" rx="6" fill="#451a03" opacity="0.8"/>
+  <text x="590" y="360" text-anchor="middle" fill="#fb923c" font-family="sans-serif" font-size="12">Not available to US persons</text>
+</svg>

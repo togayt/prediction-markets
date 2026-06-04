@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0f1e"/>
+      <stop offset="100%" style="stop-color:#111827"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="60%" style="stop-color:#34d399"/>
+      <stop offset="100%" style="stop-color:#6ee7b7"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <!-- Grid -->
+  <line x1="80" y1="80" x2="720" y2="80" stroke="#1e3a5f" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="80" y1="150" x2="720" y2="150" stroke="#1e3a5f" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="80" y1="220" x2="720" y2="220" stroke="#1e3a5f" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="80" y1="290" x2="720" y2="290" stroke="#1e3a5f" stroke-width="1" stroke-dasharray="4,4"/>
+  <!-- Y axis labels -->
+  <text x="65" y="84" text-anchor="end" fill="#475569" font-family="monospace" font-size="11">$1.00</text>
+  <text x="65" y="154" text-anchor="end" fill="#475569" font-family="monospace" font-size="11">$0.75</text>
+  <text x="65" y="224" text-anchor="end" fill="#475569" font-family="monospace" font-size="11">$0.50</text>
+  <text x="65" y="294" text-anchor="end" fill="#475569" font-family="monospace" font-size="11">$0.25</text>
+  <!-- Price probability line -->
+  <polyline points="80,290 150,260 220,250 290,220 360,200 430,170 500,155 570,140 640,125 720,110"
+    fill="none" stroke="url(#lineGrad)" stroke-width="3" filter="url(#glow)"/>
+  <!-- Area fill -->
+  <polygon points="80,290 150,260 220,250 290,220 360,200 430,170 500,155 570,140 640,125 720,110 720,350 80,350"
+    fill="#10b981" opacity="0.07"/>
+  <!-- Current price dot -->
+  <circle cx="720" cy="110" r="7" fill="#34d399" filter="url(#glow)"/>
+  <!-- Price badge -->
+  <rect x="625" y="85" width="90" height="28" rx="5" fill="#065f46"/>
+  <text x="670" y="104" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="13" font-weight="bold">78¢ = 78%</text>
+  <!-- Labels -->
+  <text x="400" y="375" text-anchor="middle" fill="#475569" font-family="monospace" font-size="11" letter-spacing="1">PROBABILITY OVER TIME</text>
+  <text x="400" y="35" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="14">Reading Prediction Market Prices</text>
+</svg>

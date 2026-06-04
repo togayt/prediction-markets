@@ -2,7 +2,7 @@
 title: 'Kalshi Review: The Regulated US Prediction Market'
 description: 'An honest look at Kalshi: the CFTC-regulated prediction market platform. Who it suits, what you can trade, fees, and how it compares to alternatives.'
 pubDate: 'May 20 2025'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/kalshi-regulation.svg'
 ---
 
 Kalshi is currently the only federally regulated prediction market exchange in the United States, operating under oversight from the Commodity Futures Trading Commission (CFTC). That regulatory status makes it the default choice for US-based traders who want a compliant, mainstream-friendly platform.
