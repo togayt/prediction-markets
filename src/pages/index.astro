@@ -13,37 +13,166 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>Find the right prediction market for you</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+			<section class="hero">
+				<h1>Find the right prediction market for you</h1>
+				<p class="hero-subheadline">
+					Plain-English guides and honest comparisons of Kalshi, Polymarket, and Crypto.com — so you can
+					pick the right platform and start in minutes.
+				</p>
+				<a class="button-primary" href="#compare">Compare platforms</a>
+			</section>
+
+			<section class="intro">
+				<h2>New to prediction markets?</h2>
+				<p>
+					A prediction market is a marketplace where people trade on the outcome of real-world events —
+					elections, sports, economics, and more. Instead of a single expert’s forecast, prices on each
+					outcome reflect the crowd’s estimate of how likely it is to happen.
+				</p>
+				<p>
+					If you are new, start with our beginner’s guide for a plain-English walkthrough of how these
+					platforms work and what to check before you sign up.
+				</p>
+				<p>
+					<a href="/blog/what-is-a-prediction-market-beginners-guide/">Read the full beginner's guide →</a>
+				</p>
+			</section>
+
+			<section id="compare" class="compare">
+				<h2>Compare the top platforms</h2>
+				<div class="platform-grid">
+					<article class="platform-card">
+						<h3>Kalshi</h3>
+						<p><strong>Best for:</strong> US users who want a regulated, mainstream platform.</p>
+						<a class="button-platform" href="#">Visit Kalshi</a><!-- TODO: replace with affiliate link -->
+					</article>
+					<article class="platform-card">
+						<h3>Polymarket</h3>
+						<p>
+							<strong>Best for:</strong> crypto-comfortable users outside the US who want the largest,
+							best-known markets.
+						</p>
+						<a class="button-platform" href="#">Visit Polymarket</a><!-- TODO: replace with affiliate link -->
+					</article>
+					<article class="platform-card">
+						<h3>Crypto.com</h3>
+						<p>
+							<strong>Best for:</strong> people already in crypto who want prediction markets alongside an
+							exchange.
+						</p>
+						<a class="button-platform" href="#">Visit Crypto.com</a><!-- TODO: replace with affiliate link -->
+					</article>
+				</div>
+				<p class="compare-note">
+					Availability and rules vary by country and age — always check before signing up.
+				</p>
+			</section>
+
+			<p class="affiliate-disclosure">
+				We may earn a commission when you sign up through links on this site, at no extra cost to you. This
+				keeps our guides free.
 			</p>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.hero {
+		margin-bottom: 3em;
+	}
+
+	.hero-subheadline {
+		font-size: 1.15em;
+		color: rgb(var(--gray));
+		max-width: 42em;
+	}
+
+	.button-primary {
+		display: inline-block;
+		margin-top: 0.5em;
+		padding: 0.75em 1.5em;
+		background: var(--accent);
+		color: white;
+		text-decoration: none;
+		border-radius: 8px;
+		font-weight: 700;
+	}
+
+	.button-primary:hover {
+		background: var(--accent-dark);
+		color: white;
+	}
+
+	.intro {
+		margin-bottom: 3em;
+	}
+
+	.intro h2 {
+		font-size: 2em;
+	}
+
+	.compare h2 {
+		font-size: 2em;
+	}
+
+	.platform-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25em;
+		margin: 1.5em 0 1em;
+	}
+
+	.platform-card {
+		background: white;
+		border-radius: 8px;
+		padding: 1.25em;
+		box-shadow: var(--box-shadow);
+	}
+
+	.platform-card h3 {
+		font-size: 1.25em;
+		margin-bottom: 0.75em;
+	}
+
+	.platform-card p {
+		margin-bottom: 1.25em;
+		font-size: 0.95em;
+	}
+
+	.button-platform {
+		display: inline-block;
+		padding: 0.6em 1.1em;
+		border: 2px solid var(--accent);
+		border-radius: 8px;
+		color: var(--accent);
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 0.95em;
+	}
+
+	.button-platform:hover {
+		background: var(--accent);
+		color: white;
+	}
+
+	.compare-note {
+		font-size: 0.9em;
+		color: rgb(var(--gray));
+		margin-bottom: 0;
+	}
+
+	.affiliate-disclosure {
+		margin-top: 3em;
+		padding-top: 1.5em;
+		border-top: 1px solid rgb(var(--gray-light));
+		font-size: 0.9em;
+		color: rgb(var(--gray));
+	}
+
+	@media (max-width: 720px) {
+		.platform-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
