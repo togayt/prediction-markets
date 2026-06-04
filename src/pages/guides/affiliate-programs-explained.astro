@@ -1,0 +1,143 @@
+---
+import Base from "../../layouts/Base.astro";
+
+const faqs = [
+  {
+    q: "How much can you earn per referral?",
+    a: "It depends entirely on the platform's deal. Many programs pay a fixed fee (CPA) per qualified user, plus or instead of a percentage of trading fees (RevShare). There are no guaranteed amounts: payouts vary by platform, region, and how active your referred users are.",
+  },
+  {
+    q: "CPA or RevShare: which is better?",
+    a: "CPA pays you a flat fee fast, which is great early on. RevShare pays a share of revenue over time, which rewards you more if your audience trades a lot. A hybrid (CPA now + RevShare later) is usually the strongest long-term deal.",
+  },
+  {
+    q: "Do I need an audience before I start?",
+    a: "It helps, but it isn't required. Many affiliates build an audience from scratch through helpful content and search traffic: which is exactly the approach this site takes. Genuinely useful guides earn clicks over time.",
+  },
+  {
+    q: "Is this the same as being a sportsbook affiliate?",
+    a: "Similar, but with a twist: prediction-market events can take months to resolve, so the platform often can't measure a user's real value right away. That changes when and how commissions are paid compared with daily-settling sports bets.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+
+<Base
+  title="How prediction market affiliate programs work"
+  description="A plain-English guide to how prediction market affiliate programs pay partners: CPA, RevShare and hybrid commissions, qualification rules, tracking, and why event settlement makes the timing unique."
+  path="/guides/affiliate-programs-explained"
+  schema={faqSchema}
+>
+  <article class="prose wrap">
+    <p class="eyebrow">For builders</p>
+    <h1>How prediction market affiliate programs work</h1>
+
+    <p class="lede">
+      A prediction market affiliate earns a commission when someone they refer
+      signs up and trades on a platform like Kalshi, Polymarket or Crypto.com. The
+      twist that makes these programs different: a platform often can't measure a
+      user's true value until the event they traded on actually resolves.
+    </p>
+
+    <h2>The three ways affiliates get paid</h2>
+    <p>Almost every program is built from three commission models:</p>
+
+    <div class="table-scroll">
+      <table class="compare">
+        <thead>
+          <tr><th>Model</th><th>How you're paid</th><th>The trade-off</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>CPA</th>
+            <td>A flat fee when a referred user does a qualifying action (e.g. a first deposit or first trade).</td>
+            <td>Paid quickly and simple to understand: but rewards sign-ups, not how good the user actually is.</td>
+          </tr>
+          <tr>
+            <th>RevShare</th>
+            <td>A percentage of the fees the platform earns from your referred users, often for a long time.</td>
+            <td>Rewards real value: but payouts can lag, because fees aren't final until markets settle.</td>
+          </tr>
+          <tr>
+            <th>Hybrid</th>
+            <td>A CPA up front <em>plus</em> a RevShare cut over time.</td>
+            <td>Usually the best deal: money now, upside later. Slightly more complex to track.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>What counts as a "qualified" referral</h2>
+    <p>
+      You don't get paid just because someone clicks your link. A referral has to
+      <em>qualify</em>, and the bar varies:
+    </p>
+    <ul>
+      <li><strong>Deposit only</strong>: the weakest trigger; a user can deposit and never trade.</li>
+      <li><strong>First trade above a minimum</strong>: better, because it filters out idle accounts.</li>
+      <li><strong>Sustained volume</strong>: the strongest; it rewards you for sending genuinely active traders.</li>
+    </ul>
+    <p>Read the program's terms carefully so you know exactly what triggers a payout.</p>
+
+    <h2>Why the timing is the weird part</h2>
+    <p>
+      Say a user you referred backs an election that's six months away. The platform
+      doesn't earn final revenue from that position until the event resolves: so any
+      revenue-share you're owed trickles in slowly. Good programs make this visible
+      with commission states like <strong>pending → approved → payable</strong>, so
+      you can see what's earned versus what's actually ready to withdraw.
+    </p>
+    <div class="callout">
+      <strong>Takeaway.</strong> In prediction markets, the gap between a user signing
+      up and the platform realising revenue is the whole challenge. Expect some
+      commissions to sit "pending" until the underlying events settle.
+    </div>
+
+    <h2>How tracking actually works</h2>
+    <p>
+      When you join a program you get a unique tracked link. Because a user's journey
+      can stretch across months, serious programs rely on two things:
+    </p>
+    <ul>
+      <li><strong>Server-to-server (S2S) tracking</strong> instead of browser cookies, so a conversion still registers months later even if cookies are cleared.</li>
+      <li><strong>Long attribution windows</strong>: often 180 days or lifetime: so you still get credit when a slow-resolving market finally pays off.</li>
+    </ul>
+
+    <h2>Doing it the honest way</h2>
+    <p>
+      The affiliates who last don't try to game the system. Schemes like "deposit and
+      hold" (referring users who deposit purely to trigger a CPA, then withdraw) get
+      clawed back and banned. The durable strategy is the boring one: publish
+      genuinely useful content, be honest about which platform fits which reader, and
+      let trust compound. That's exactly the approach behind this site -
+      see <a href="/how-we-make-money">how we make money</a>.
+    </p>
+
+    <h2>Frequently asked questions</h2>
+    {faqs.map((f) => (
+      <details class="faq">
+        <summary>{f.q}</summary>
+        <p>{f.a}</p>
+      </details>
+    ))}
+
+    <div class="btn-row" style="margin-top:2.5rem;">
+      <a class="btn" href="/what-is-a-prediction-market">Start with the basics →</a>
+      <a class="btn btn--ghost" href="/compare">Compare platforms</a>
+    </div>
+    <p style="font-size:0.85rem; color:var(--ink-soft);">
+      Educational content only, not financial or business advice. Affiliate program
+      terms, rates and availability vary and change: always confirm details with the
+      program directly.
+    </p>
+  </article>
+</Base>
