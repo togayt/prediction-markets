@@ -1,0 +1,192 @@
+---
+import Base from "../../layouts/Base.astro";
+import FAQSchema from "../../components/FAQSchema.astro";
+import ArticleSchema from "../../components/ArticleSchema.astro";
+import Cta from "../../components/Cta.astro";
+import { platforms } from "../../config";
+
+// ─── CONFIGURATION ────────────────────────────────────────────────────────────
+
+const EVENT = {
+  title: "UK ILR 5 to 10 Years — Prediction Markets & Live Odds",
+  description:
+    "Will the UK extend the ILR qualifying period from 5 to 10 years? Track live prediction market odds on Polymarket and compare prices before the policy decision lands.",
+  path: "/events/uk-ilr-time-change",
+  pubDate: new Date("2026-06-08"),
+  updatedDate: new Date("2026-06-08"),
+
+  headline: "Will the UK Change ILR Waiting Time from 5 to 10 Years?",
+  lede:
+    "The UK government has signalled a potential doubling of the ILR qualifying period. Prediction markets are pricing the probability of this change — here is where to trade and what the current odds say.",
+  eventDate: "2026 (policy decision pending)",
+  eventDescription:
+    "Indefinite Leave to Remain (ILR) is the UK's permanent residency status, currently requiring five years of continuous lawful residence for most visa routes including Skilled Worker. Proposals to double this to ten years have circulated in Home Office consultations and media reports. A confirmed change would affect hundreds of thousands of migrants already on the path to settlement.",
+
+  availableOn: ["polymarket"],
+};
+
+// ─── FAQ ─────────────────────────────────────────────────────────────────────
+
+const faqs = [
+  {
+    q: "What is ILR and why does the qualifying period matter?",
+    a: "ILR (Indefinite Leave to Remain) is permanent residency in the UK. Once granted, holders can live and work in the UK without visa restrictions and can apply for British citizenship after 12 months. The qualifying period — currently 5 years for most routes — is the minimum continuous residence required before applying. Doubling it to 10 years would significantly delay settlement for everyone currently on a Skilled Worker, Family, or other route.",
+  },
+  {
+    q: "Is the UK ILR change from 5 to 10 years confirmed?",
+    a: "As of June 2026, no formal legislation has passed. The proposal appeared in Home Office consultations and was widely reported in the press, but no statutory change has been enacted. Prediction markets currently reflect this uncertainty with the probability hovering around [VERIFY: current odds | source: https://polymarket.com | updated: needs-check].",
+  },
+  {
+    q: "Where can I trade on this market?",
+    a: "Polymarket has a binary market on whether the UK will enact the ILR extension to 10 years. UK and EU residents can participate; US persons are restricted from Polymarket. Check the specific market page for current liquidity and contract terms before trading.",
+  },
+  {
+    q: "How does the prediction market resolve?",
+    a: "Resolution typically depends on an official act of Parliament or a Home Office statutory instrument formally amending the qualifying period. A government consultation or press release alone would not trigger resolution — the law must actually change.",
+  },
+  {
+    q: "What is the minimum trade size?",
+    a: "On Polymarket you can trade from roughly $1 of USDC per contract. Fees and slippage vary with market liquidity.",
+  },
+  {
+    q: "Can US residents trade this market?",
+    a: "No. Polymarket is not available to US persons. No CFTC-regulated US platform (Kalshi) currently lists this specific UK immigration market.",
+  },
+  {
+    q: "What would drive the odds higher?",
+    a: "A formal Home Office announcement, a White Paper on immigration reform specifically naming the 10-year ILR change, or inclusion in the King's Speech legislative programme would all push the 'Yes' probability sharply higher. Conversely, a government denial or dropping of the proposal would collapse it.",
+  },
+];
+
+// ─── DATA ─────────────────────────────────────────────────────────────────────
+
+const availablePlatforms = platforms.filter(p => EVENT.availableOn.includes(p.id));
+---
+
+<Base
+  title={EVENT.title}
+  description={EVENT.description}
+  path={EVENT.path}
+>
+  <ArticleSchema
+    title={EVENT.title}
+    description={EVENT.description}
+    url={EVENT.path}
+    pubDate={EVENT.pubDate}
+    updatedDate={EVENT.updatedDate}
+    type="Article"
+  />
+
+  <article class="prose wrap">
+    <p class="eyebrow">Event markets · {EVENT.eventDate}</p>
+    <h1>{EVENT.headline}</h1>
+
+    <p class="lede">{EVENT.lede}</p>
+
+    <!-- ── WHERE TO TRADE ─────────────────────────────────────────────────── -->
+    <h2>Where to trade</h2>
+    {availablePlatforms.length > 0
+      ? availablePlatforms.map(p => (
+          <div style="margin-bottom: 1rem;">
+            <Cta platform={p} label={`Trade on ${p.name}`} />
+            <p style="font-size:0.88rem; color:var(--ink-soft); margin-top:0.3rem;">{p.notes}</p>
+          </div>
+        ))
+      : (
+          <p>
+            No major regulated platform currently lists a dedicated UK ILR market.
+            Check <a href="https://polymarket.com" rel="noopener noreferrer">Polymarket</a> directly
+            for the most up-to-date availability. US residents cannot use Polymarket.
+          </p>
+        )
+    }
+
+    <!-- ── ABOUT THE EVENT ────────────────────────────────────────────────── -->
+    <h2>About the policy change</h2>
+    <p>{EVENT.eventDescription}</p>
+
+    <p>
+      The proposal gained traction as part of broader Conservative and Labour-era
+      immigration reform debates, with the Home Office exploring ways to reduce net
+      migration figures without cutting skilled-worker inflows. Extending the settlement
+      pathway would keep migrants on time-limited visas longer, reducing the permanent
+      residency grant rate in the short term.
+    </p>
+
+    <p>
+      Key questions being traded include: Will any change be legislated before the next
+      general election cycle? Will it apply to people already on the Skilled Worker
+      route, or only new applicants? Will transitional protections be included?
+      Each of these sub-questions affects how prediction markets price the binary outcome.
+    </p>
+
+    <p>
+      Current Polymarket odds should be checked directly — this page is updated as the
+      policy situation evolves but may lag real-time price movements.
+    </p>
+
+    <div class="callout">
+      <strong>Resolution note.</strong> This market resolves <em>Yes</em> if the UK
+      Parliament passes primary legislation, or if the Home Office issues a statutory
+      instrument, formally changing the standard ILR qualifying period to 10 years.
+      Government announcements, consultations, and media reports do <em>not</em> resolve
+      the market — the law must change. Check the exact wording on Polymarket's market
+      page before placing any trade.
+    </div>
+
+    <!-- ── WHAT TO WATCH ──────────────────────────────────────────────────── -->
+    <h2>Key factors to watch</h2>
+    <ul>
+      <li>
+        <strong>King's Speech / legislative programme</strong> — inclusion of an
+        Immigration Bill would strongly signal the change is coming within the
+        parliamentary session.
+      </li>
+      <li>
+        <strong>Home Office White Paper on immigration</strong> — a formal consultation
+        paper naming the 10-year ILR rule would shift odds sharply upward.
+      </li>
+      <li>
+        <strong>Net migration statistics</strong> — if net migration figures fall sharply,
+        political pressure to enact the change diminishes and odds should drop.
+      </li>
+      <li>
+        <strong>Legal challenges</strong> — any judicial review or human-rights challenge
+        to the proposal could delay or kill the change even after announcement.
+      </li>
+      <li>
+        <strong>Transitional protections</strong> — the political cost of the change rises
+        significantly if it applies retroactively to existing visa holders; this
+        reduces the chance of enactment and should push odds lower.
+      </li>
+    </ul>
+
+    <!-- ── TRADING TIPS ───────────────────────────────────────────────────── -->
+    <h2>Tips for trading this market</h2>
+    <ul>
+      <li>
+        Set a Google News alert for "ILR 10 years" and "Indefinite Leave to Remain reform"
+        — breaking news will move prices before most traders react.
+      </li>
+      <li>
+        Parliamentary timelines matter: a change requiring primary legislation cannot
+        pass in days; give yourself enough time horizon when entering a position.
+      </li>
+      <li>
+        Read the resolution criteria carefully — a "proposal" or "announcement" is not
+        the same as enacted law. Many traders misprice this distinction.
+      </li>
+      <li>Start small: $5–$20 lets you experience the full trade cycle without material risk.</li>
+    </ul>
+
+    <!-- ── FAQ ────────────────────────────────────────────────────────────── -->
+    <h2>Frequently asked questions</h2>
+    <FAQSchema faqs={faqs} />
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:2rem;">
+      Educational content only, not financial or immigration advice. Prediction market
+      availability varies by region. Always verify market resolution criteria before trading.
+      Only trade with money you can afford to lose.
+    </p>
+  </article>
+</Base>
